@@ -1,0 +1,45 @@
+:root {
+  --color-bg: #FFFAF4;
+  --color-text: #6C5F55;
+  --color-text-secondary: #807C76;
+  --color-text-muted: #918C85;
+  --color-card-bg: #F3EDE3;
+  --color-card-border: #D4CAB8;
+  --color-btn-bg: #6C5F55;
+  --color-btn-text: #FFFAF4;
+  --color-btn-hover: #5a4f47;
+  --color-link: #417FB2;
+  --color-link-hover: #356a96;
+
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
