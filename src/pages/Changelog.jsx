@@ -1,9 +1,23 @@
 function Changelog() {
   const releases = [
     {
+      version: '0.4.0-alpha.1',
+      date: 'April 20, 2026',
+      changes: [
+        'Add coordinates to elements and the seem in map view',
+        'Smoother zoom and pan with momentum/inertia effects',
+      ],
+      solid: true,
+    },
+    {
       version: '0.3.0-alpha.1',
-      date: 'Coming Soon...',
-      solid: false,
+      date: 'April 12, 2026',
+      changes: [
+        'Groups events and spans',
+        'Search overlay for quick element discovery',
+        'Video export, customizable keyboard shortcuts, Wikipedia integration',
+      ],
+      solid: true,
     },
     {
       version: '0.2.0-alpha.1',
