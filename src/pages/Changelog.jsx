@@ -1,6 +1,26 @@
 function Changelog() {
   const releases = [
     {
+      version: '0.4.0-alpha.3',
+      date: 'May 13, 2026',
+      changes: [
+        'Folder and sub-folder support on the homepage',
+        'New Parchment v2 theme',
+        'Homepage sorting, event group inheritance',
+      ],
+      solid: true,
+    },
+    {
+      version: '0.4.0-alpha.2',
+      date: 'April 28, 2026',
+      changes: [
+        'Tick density controls for year label spacing',
+        'Full MediaWiki support, calendar input, OSM attribution',
+        'Grouping customization for eras and spans',
+      ],
+      solid: true,
+    },
+    {
       version: '0.4.0-alpha.1',
       date: 'April 20, 2026',
       changes: [
