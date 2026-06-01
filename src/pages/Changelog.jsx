@@ -1,6 +1,25 @@
 function Changelog() {
   const releases = [
     {
+      version: '0.5.0-alpha.1',
+      date: 'June 1, 2026',
+      changes: [
+        'Image thumbnails for events',
+        'Source citations with links',
+        'Customizable event colors, video embeds in notes',
+      ],
+      solid: true,
+    },
+    {
+      version: '0.4.0-alpha.4',
+      date: 'May 15, 2026',
+      changes: [
+        'Notes reorganized into a .notes folder',
+        'Fixed timeline creation in subfolders and search',
+      ],
+      solid: true,
+    },
+    {
       version: '0.4.0-alpha.3',
       date: 'May 13, 2026',
       changes: [
