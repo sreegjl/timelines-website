@@ -1,6 +1,16 @@
 function Changelog() {
   const releases = [
     {
+      version: '0.5.0-alpha.2',
+      date: 'June 2, 2026',
+      changes: [
+        'Web image URLs as event thumbnails',
+        'Portable asset paths, enhanced video in notes',
+        'Fixed thumbnail drag-and-drop, overlapping thumbnails',
+      ],
+      solid: true,
+    },
+    {
       version: '0.5.0-alpha.1',
       date: 'June 1, 2026',
       changes: [

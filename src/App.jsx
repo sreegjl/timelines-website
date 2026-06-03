@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Download from './pages/Download'
 import Changelog from './pages/Changelog'
+import Gallery from './pages/Gallery'
 import './App.css'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/download" element={<Download />} />
             <Route path="/changelog" element={<Changelog />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
         </main>
         <Footer />
