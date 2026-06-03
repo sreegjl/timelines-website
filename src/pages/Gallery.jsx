@@ -1,0 +1,57 @@
+import { useState, useEffect } from 'react'
+
+const images = Object.entries(
+  import.meta.glob('../gallery/*.{jpg,jpeg,png,gif,webp,svg,avif,PNG,JPG,JPEG,WEBP}', { eager: true })
+).map(([path, mod]) => ({
+  src: mod.default,
+  name: path.split('/').pop().replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
+}))
+
+function Gallery() {
+  const [selectedIndex, setSelectedIndex] = useState(null)
+
+  const prev = () => setSelectedIndex((i) => (i - 1 + images.length) % images.length)
+  const next = () => setSelectedIndex((i) => (i + 1) % images.length)
+
+  useEffect(() => {
+    if (selectedIndex === null) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') setSelectedIndex(null)
+      if (e.key === 'ArrowLeft') prev()
+      if (e.key === 'ArrowRight') next()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [selectedIndex])
+
+  const selected = selectedIndex !== null ? images[selectedIndex] : null
+
+  return (
+    <div className="page gallery">
+      <h1>Gallery</h1>
+      <p className="page-subtitle">Screenshots and visuals from Timelines.</p>
+
+      {images.length === 0 ? (
+        <p className="gallery-empty">No images yet.</p>
+      ) : (
+        <div className="gallery-grid">
+          {images.map((img, i) => (
+            <button key={i} className="gallery-item" onClick={() => setSelectedIndex(i)}>
+              <img src={img.src} alt={img.name} />
+            </button>
+          ))}
+        </div>
+      )}
+
+      {selected && (
+        <div className="gallery-lightbox" onClick={() => setSelectedIndex(null)}>
+          <button className="gallery-nav gallery-nav-prev" onClick={(e) => { e.stopPropagation(); prev() }}>&#8249;</button>
+          <img src={selected.src} alt={selected.name} onClick={(e) => e.stopPropagation()} />
+          <button className="gallery-nav gallery-nav-next" onClick={(e) => { e.stopPropagation(); next() }}>&#8250;</button>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default Gallery

@@ -29,6 +29,7 @@ function Navbar() {
         <div className="navbar-links">
           <Link to="/download" className={location.pathname === '/download' ? 'active' : ''}>Download</Link>
           <Link to="/changelog" className={location.pathname === '/changelog' ? 'active' : ''}>Changelog</Link>
+          <Link to="/gallery" className={location.pathname === '/gallery' ? 'active' : ''}>Gallery</Link>
           <a href="https://ko-fi.com/sreegjl" className="btn-donate" target="_blank" rel="noopener noreferrer">
             <svg
               className="btn-donate-icon"
