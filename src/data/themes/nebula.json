@@ -1,0 +1,30 @@
+{
+  "name": "Nebula",
+  "type": "dark",
+  "collection": "featured",
+  "author": "sreegjl",
+  "font": {
+    "family": "Goldman",
+    "cssUrl": "https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap",
+    "serifFamily": "Goldman",
+    "serifCssUrl": "https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap"
+  },
+  "colors": {
+    "text-primary": "#FF92F0",
+    "ui-muted": "#9034D7",
+    "accent-color": "#1C123C",
+    "surface": "#090419",
+    "inset-bg": "#040211",
+    "app-bg": "#03010B",
+    "text-muted": "#B7BCC1",
+    "text-subtle": "#8E9398",
+    "era-label": "#1E2125",
+    "selection-color": "#5282DB",
+    "link-color": "#6D1FA0",
+    "light-bg": "#2A2D31",
+    "border-color": "#3B3F45",
+    "secondary-text": "#B0B5BA",
+    "highlight-color": "#1A1950",
+    "surface-active": "#1C123C"
+  }
+}
