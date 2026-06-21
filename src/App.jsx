@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Download from './pages/Download'
 import Changelog from './pages/Changelog'
 import Gallery from './pages/Gallery'
+import Wiki from './pages/Wiki'
 import {
   applyThemeToDocument,
   defaultThemeId,
@@ -43,6 +44,8 @@ function App() {
             />
             <Route path="/download" element={<Download />} />
             <Route path="/changelog" element={<Changelog />} />
+            <Route path="/wiki" element={<Wiki />} />
+            <Route path="/wiki/:page" element={<Wiki />} />
             <Route path="/gallery" element={<Gallery />} />
           </Routes>
         </main>
