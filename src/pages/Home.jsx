@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getThemeById } from '../data/themes'
 
@@ -347,88 +347,7 @@ function Home({ activeThemeId, onThemeSelect }) {
           </div>
 
           <div className="views-card">
-            <div className="views-demo views-demo-table" aria-hidden="true">
-              <div className="views-demo-canvas">
-                <div className="views-table-demo">
-                  <div className="views-table-inner">
-                    <div className="views-table-head">
-                    <span>Type</span>
-                    <span>Name</span>
-                    <span>Parent</span>
-                    <span>Tags</span>
-                    <span>Start</span>
-                    <span>End</span>
-                  </div>
-
-                  <div className="views-table-row">
-                    <span className="views-table-type">
-                      Span
-                    </span>
-                    <span className="views-table-name">Athens</span>
-                    <span className="views-table-parent">Ancient Greece</span>
-                    <span className="views-table-tags">polis</span>
-                    <span className="views-table-date">1068 BCE</span>
-                    <span className="views-table-date">146 BCE</span>
-                  </div>
-
-                  <div className="views-table-row">
-                    <span className="views-table-type">
-                      Event
-                    </span>
-                    <span className="views-table-name">First Olympic Games</span>
-                    <span className="views-table-parent">Olympia</span>
-                    <span className="views-table-tags">sport</span>
-                    <span className="views-table-date">776 BCE</span>
-                    <span className="views-table-date">—</span>
-                  </div>
-
-                  <div className="views-table-row">
-                    <span className="views-table-type">
-                      Era
-                    </span>
-                    <span className="views-table-name">Classical Period</span>
-                    <span className="views-table-parent">Ancient Greece</span>
-                    <span className="views-table-tags">culture</span>
-                    <span className="views-table-date">480 BCE</span>
-                    <span className="views-table-date">323 BCE</span>
-                  </div>
-
-                  <div className="views-table-row">
-                    <span className="views-table-type">
-                      Event
-                    </span>
-                    <span className="views-table-name">Battle of Marathon</span>
-                    <span className="views-table-parent">Athens</span>
-                    <span className="views-table-tags">war</span>
-                    <span className="views-table-date">490 BCE</span>
-                    <span className="views-table-date">—</span>
-                  </div>
-
-                  <div className="views-table-row">
-                    <span className="views-table-type">
-                      Span
-                    </span>
-                    <span className="views-table-name">Macedon</span>
-                    <span className="views-table-parent">Ancient Greece</span>
-                    <span className="views-table-tags">kingdom</span>
-                    <span className="views-table-date">808 BCE</span>
-                    <span className="views-table-date">146 BCE</span>
-                  </div>
-
-                  <div className="views-table-row">
-                    <span className="views-table-type">
-                      Event
-                    </span>
-                    <span className="views-table-name">Death of Alexander</span>
-                    <span className="views-table-parent">Macedon</span>
-                    <span className="views-table-tags">succession</span>
-                    <span className="views-table-date">323 BCE</span>
-                    <span className="views-table-date">—</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <SpreadsheetDemo />
             <div className="views-card-body">
               <div className="views-card-head">
                 <h3>Spreadsheet view</h3>
@@ -534,6 +453,75 @@ function Home({ activeThemeId, onThemeSelect }) {
           </div>
         </div>
       </section>
+    </div>
+  )
+}
+
+const spreadsheetRows = [
+  { type: 'Span', name: 'Athens', parent: 'Ancient Greece', tags: 'polis', start: '1068 BCE', end: '146 BCE' },
+  { type: 'Event', name: 'First Olympic Games', parent: 'Olympia', tags: 'sport', start: '776 BCE', end: '—' },
+  { type: 'Era', name: 'Classical Period', parent: 'Ancient Greece', tags: 'culture', start: '480 BCE', end: '323 BCE' },
+  { type: 'Event', name: 'Battle of Marathon', parent: 'Athens', tags: 'war', start: '490 BCE', end: '—' },
+  { type: 'Span', name: 'Macedon', parent: 'Ancient Greece', tags: 'kingdom', start: '808 BCE', end: '146 BCE' },
+  { type: 'Event', name: 'Death of Alexander', parent: 'Macedon', tags: 'succession', start: '323 BCE', end: '—' },
+  { type: 'Span', name: 'Delian League', parent: 'Athens', tags: 'alliance', start: '478 BCE', end: '404 BCE' },
+  { type: 'Event', name: 'Battle of Thermopylae', parent: 'Sparta', tags: 'war', start: '480 BCE', end: '—' },
+  { type: 'Span', name: 'Sparta', parent: 'Ancient Greece', tags: 'polis', start: '900 BCE', end: '146 BCE' },
+  { type: 'Era', name: 'Hellenistic Period', parent: 'Ancient Greece', tags: 'culture', start: '323 BCE', end: '31 BCE' },
+  { type: 'Event', name: 'Peloponnesian War', parent: 'Ancient Greece', tags: 'war', start: '431 BCE', end: '404 BCE' },
+]
+
+function SpreadsheetDemo() {
+  const [sortKey, setSortKey] = useState(null)
+  const [sortAsc, setSortAsc] = useState(true)
+
+  const handleSort = (key) => {
+    if (sortKey === key) {
+      setSortAsc(!sortAsc)
+    } else {
+      setSortKey(key)
+      setSortAsc(true)
+    }
+  }
+
+  const sorted = sortKey
+    ? [...spreadsheetRows].sort((a, b) => {
+        const cmp = a[sortKey].localeCompare(b[sortKey])
+        return sortAsc ? cmp : -cmp
+      })
+    : spreadsheetRows
+
+  const sortIcon = (key) =>
+    sortKey === key ? (sortAsc ? '▲' : '▼') : '▲'
+
+  return (
+    <div className="views-demo views-demo-table" aria-hidden="true">
+      <div className="views-demo-canvas">
+        <div className="views-table-demo">
+          <div className="views-table-inner">
+            <div className="views-table-head">
+              <span className={`views-table-sortable${sortKey === 'type' ? ' is-sorted' : ''}`} onClick={() => handleSort('type')}>Type <span className="views-table-sort-icon">{sortIcon('type')}</span></span>
+              <span className={`views-table-sortable${sortKey === 'name' ? ' is-sorted' : ''}`} onClick={() => handleSort('name')}>Name <span className="views-table-sort-icon">{sortIcon('name')}</span></span>
+              <span className={`views-table-sortable${sortKey === 'parent' ? ' is-sorted' : ''}`} onClick={() => handleSort('parent')}>Parent <span className="views-table-sort-icon">{sortIcon('parent')}</span></span>
+              <span>Tags</span>
+              <span>Start</span>
+              <span>End</span>
+            </div>
+            <div className="views-table-scroll">
+              {sorted.map((row) => (
+                <div key={row.name} className="views-table-row">
+                  <span className="views-table-type">{row.type}</span>
+                  <span className="views-table-name">{row.name}</span>
+                  <span className="views-table-parent">{row.parent}</span>
+                  <span className="views-table-tags">{row.tags}</span>
+                  <span className="views-table-date">{row.start}</span>
+                  <span className="views-table-date">{row.end}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
