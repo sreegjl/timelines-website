@@ -28,7 +28,7 @@ function Gallery() {
 
   return (
     <div className="page gallery">
-      <h1>Gallery</h1>
+      <h1 className="page-title">Gallery</h1>
       <p className="page-subtitle">Screenshots and visuals from Timelines.</p>
 
       {images.length === 0 ? (

@@ -1,6 +1,15 @@
 function Changelog() {
   const releases = [
     {
+      version: '0.5.0-alpha.3',
+      date: 'June 15, 2026',
+      changes: [
+        'Reworked theme color variables (renamed keys, added theme type/collection metadata)',
+        'Event overlap issue resolved when thumbnails enabled',
+      ],
+      solid: true,
+    },
+    {
       version: '0.5.0-alpha.2',
       date: 'June 2, 2026',
       changes: [
@@ -95,7 +104,7 @@ function Changelog() {
 
   return (
     <div className="page changelog">
-      <h1>Changelog</h1>
+      <h1 className="page-title">Changelog</h1>
       <p className="page-subtitle">See what&apos;s new in each release.</p>
 
       <div className="changelog-list">
