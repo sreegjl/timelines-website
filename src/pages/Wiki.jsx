@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import usePageMeta from '../hooks/usePageMeta'
 
 const pages = Object.entries(
   import.meta.glob('../data/wiki/*.md', { eager: true, query: '?raw', import: 'default' })
@@ -38,6 +39,11 @@ function Wiki() {
   const navigate = useNavigate()
   const activeSlug = page || 'Home'
   const activePage = pages.find((p) => p.slug === activeSlug)
+
+  usePageMeta({
+    title: activeSlug === 'Home' ? 'Wiki' : `${activeSlug} — Wiki`,
+    description: `Timelines wiki — ${activeSlug.replace(/-/g, ' ')}`,
+  })
 
   return (
     <div className="page wiki">

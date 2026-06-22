@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getThemeById } from '../data/themes'
+import usePageMeta from '../hooks/usePageMeta'
 
 function Home({ activeThemeId, onThemeSelect }) {
+  usePageMeta()
+
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
@@ -47,8 +50,375 @@ function Home({ activeThemeId, onThemeSelect }) {
           </a>
         </div>
 
-        <div className="hero-demo">
-          <img src={`${import.meta.env.BASE_URL}timeline.png`} alt="Timelines app screenshot" />
+        <div className="hero-demo" aria-hidden="true">
+          <img className="hero-demo-img" src={`${import.meta.env.BASE_URL}timeline.webp`} alt="Timelines app screenshot" />
+          <div className="hero-timeline">
+            <div className="hero-titlebar">
+              <div className="hero-titlebar-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span className="hero-titlebar-title">Ancient Greece — Timelines</span>
+            </div>
+            <div className="hero-timeline-body">
+              <div className="hero-actionbar">
+                <button className="hero-actionbar-btn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14" /><path d="M5 12h14" /></svg>
+                </button>
+                <button className="hero-actionbar-btn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /></svg>
+                </button>
+                <div className="hero-actionbar-divider"></div>
+                <button className="hero-actionbar-btn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 8v8" /><path d="M8 12h8" /></svg>
+                </button>
+                <button className="hero-actionbar-btn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11" /></svg>
+                </button>
+              </div>
+              <div className="hero-sidebar">
+                <div className="hero-sidebar-file">
+                  <div className="hero-sidebar-file-info">
+                    <span className="hero-sidebar-file-name">ancient-greece.timeline <svg className="hero-sidebar-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></span>
+                    <span className="hero-sidebar-file-meta">Ancient Greece</span>
+                  </div>
+                </div>
+                <div className="hero-sidebar-toolbar">
+                  <div className="hero-sidebar-toolbar-icons">
+                    <span className="hero-sidebar-toolbar-btn">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" /></svg>
+                    </span>
+                    <span className="hero-sidebar-toolbar-btn">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" /><line x1="7" y1="7" x2="7.01" y2="7" /></svg>
+                    </span>
+                    <span className="hero-sidebar-toolbar-btn">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>
+                    </span>
+                  </div>
+                  <span className="hero-sidebar-new-btn">+ New</span>
+                </div>
+                <div className="hero-sidebar-search">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+                  <span>Search spans, events, eras...</span>
+                  <svg className="hero-sidebar-search-sort" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h10M11 9h7M11 13h4M3 17l3 3 3-3M6 18V4" /></svg>
+                </div>
+                <div className="hero-sidebar-filters">
+                  <span className="hero-sidebar-filter active">All</span>
+                  <span className="hero-sidebar-filter">politics</span>
+                  <span className="hero-sidebar-filter">war</span>
+                  <span className="hero-sidebar-filter">culture</span>
+                </div>
+                <div className="hero-sidebar-scroll">
+                <div className="hero-sidebar-group">
+                  <div className="hero-sidebar-group-head" style={{ color: '#8a7a4c' }}>
+                    <svg className="hero-sidebar-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+                    <span className="hero-sidebar-group-name">Classical</span>
+                    <span className="hero-sidebar-group-count">8</span>
+                  </div>
+                  <div className="hero-sidebar-item"><span className="sidebar-dot" style={{ background: '#7898b7' }}></span><span className="sidebar-item-name">Athens</span><span className="sidebar-item-year">1068–146 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-dot" style={{ background: '#d28f51' }}></span><span className="sidebar-item-name">Corinth</span><span className="sidebar-item-year">900–146 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-dot" style={{ background: '#ac6969' }}></span><span className="sidebar-item-name">Sparta</span><span className="sidebar-item-year">900–146 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">First Olympic Games</span><span className="sidebar-item-year">776 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-indicator" style={{ background: '#8f7ea5' }}></span><span className="sidebar-item-name">Megara</span><span className="sidebar-item-year">745–146 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-indicator" style={{ background: '#ac6969' }}></span><span className="sidebar-item-name">Lycurgus&apos; Reforms</span><span className="sidebar-item-year">700 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-indicator" style={{ background: '#7898b7' }}></span><span className="sidebar-item-name">Draco&apos;s Legislation</span><span className="sidebar-item-year">621 BCE</span></div>
+                  <div className="hero-sidebar-item active"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Battle of Marathon</span><span className="sidebar-item-year">490 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Peloponnesian War</span><span className="sidebar-item-year">431 BCE</span></div>
+                </div>
+                <div className="hero-sidebar-group">
+                  <div className="hero-sidebar-group-head" style={{ color: '#8f7a4c' }}>
+                    <svg className="hero-sidebar-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+                    <span className="hero-sidebar-group-name">Hellenistic</span>
+                    <span className="hero-sidebar-group-count">4</span>
+                  </div>
+                  <div className="hero-sidebar-item"><span className="sidebar-dot" style={{ background: '#6d7d97' }}></span><span className="sidebar-item-name">Macedon</span><span className="sidebar-item-year">808–146 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Alexander&apos;s Campaign</span><span className="sidebar-item-year">334 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Death of Alexander</span><span className="sidebar-item-year">323 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Fall of Corinth</span><span className="sidebar-item-year">146 BCE</span></div>
+                </div>
+                </div>
+              </div>
+              <div className="hero-timeline-inner">
+            {/* Events — scale: 0%=800 BCE, 100%=100 BCE (700yr range) */}
+            <div className="hero-event hero-event-lane-1" style={{ left: '3%' }}>
+              <div className="hero-event-card">
+                <div className="event-text-content">
+                  <div className="event-title">First Olympic Games</div>
+                  <div className="event-date">
+                    <span className="event-year">776 BCE</span>
+                    <span className="pinned-tag">Sport</span>
+                  </div>
+                </div>
+              </div>
+              <div className="hero-event-connector"></div>
+              <div className="hero-event-dot"></div>
+            </div>
+            <div className="hero-event hero-event-lane-0 hero-event-to-sparta" style={{ left: '14%' }}>
+              <div className="hero-event-card">
+                <div className="event-text-content">
+                  <div className="event-title">Lycurgus&apos; Reforms</div>
+                  <div className="event-date">
+                    <span className="event-year">700 BCE</span>
+                    <span className="pinned-tag">Sparta</span>
+                  </div>
+                </div>
+              </div>
+              <div className="hero-event-connector"></div>
+              <div className="hero-event-dot"></div>
+            </div>
+            <div className="hero-event hero-event-lane-1 hero-event-to-athens" style={{ left: '26%' }}>
+              <div className="hero-event-card">
+                <div className="event-text-content">
+                  <div className="event-title">Draco&apos;s Legislation</div>
+                  <div className="event-date">
+                    <span className="event-year">621 BCE</span>
+                    <span className="pinned-tag">Law</span>
+                  </div>
+                </div>
+              </div>
+              <div className="hero-event-connector"></div>
+              <div className="hero-event-dot"></div>
+            </div>
+            <div className="hero-event hero-event-lane-0 hero-event-selected" style={{ left: '44%' }}>
+              <div className="hero-event-card">
+                <div className="event-text-content">
+                  <div className="event-title">Battle of Marathon</div>
+                  <div className="event-date">
+                    <span className="event-year">490 BCE</span>
+                    <span className="pinned-tag">War</span>
+                  </div>
+                </div>
+              </div>
+              <div className="hero-event-connector"></div>
+              <div className="hero-event-dot"></div>
+            </div>
+            <div className="hero-event hero-event-lane-1" style={{ left: '53%' }}>
+              <div className="hero-event-card">
+                <div className="event-text-content">
+                  <div className="event-title">Peloponnesian War</div>
+                  <div className="event-date">
+                    <span className="event-year">431 BCE</span>
+                    <span className="pinned-tag">War</span>
+                  </div>
+                </div>
+              </div>
+              <div className="hero-event-connector"></div>
+              <div className="hero-event-dot"></div>
+            </div>
+            <div className="hero-event hero-event-lane-0" style={{ left: '67%' }}>
+              <div className="hero-event-card">
+                <div className="event-text-content">
+                  <div className="event-title">Alexander&apos;s Campaign</div>
+                  <div className="event-date">
+                    <span className="event-year">334 BCE</span>
+                    <span className="pinned-tag">Macedon</span>
+                  </div>
+                </div>
+              </div>
+              <div className="hero-event-connector"></div>
+              <div className="hero-event-dot"></div>
+            </div>
+            <div className="hero-event hero-event-lane-1" style={{ left: '78%' }}>
+              <div className="hero-event-card">
+                <div className="event-text-content">
+                  <div className="event-title">Death of Alexander</div>
+                  <div className="event-date">
+                    <span className="event-year">323 BCE</span>
+                    <span className="pinned-tag">Succession</span>
+                  </div>
+                </div>
+              </div>
+              <div className="hero-event-connector"></div>
+              <div className="hero-event-dot"></div>
+            </div>
+            <div className="hero-event hero-event-lane-0" style={{ left: '93%' }}>
+              <div className="hero-event-card">
+                <div className="event-text-content">
+                  <div className="event-title">Fall of Corinth</div>
+                  <div className="event-date">
+                    <span className="event-year">146 BCE</span>
+                    <span className="pinned-tag">Rome</span>
+                  </div>
+                </div>
+              </div>
+              <div className="hero-event-connector"></div>
+              <div className="hero-event-dot"></div>
+            </div>
+
+            {/* Spans — same scale */}
+            <div className="hero-span hero-span-athens" style={{ left: '0%', width: '93%' }}>
+              <span className="span-title">Athens</span>
+              <span className="span-years">1068 – 146 BCE</span>
+            </div>
+            <div className="hero-span hero-span-corinth" style={{ left: '0%', width: '93%' }}>
+              <span className="span-title">Corinth</span>
+              <span className="span-years">900 – 146 BCE</span>
+            </div>
+            <div className="hero-branch-connector" style={{ left: '8%' }}></div>
+            <div className="hero-span hero-span-megara" style={{ left: '8%', width: '85%' }}>
+              <span className="span-title">Megara</span>
+              <span className="span-years">745 – 146 BCE</span>
+            </div>
+            <div className="hero-span hero-span-sparta" style={{ left: '0%', width: '93%' }}>
+              <span className="span-title">Sparta</span>
+              <span className="span-years">900 – 146 BCE</span>
+            </div>
+            <div className="hero-span hero-span-macedon" style={{ left: '0%', width: '67%' }}>
+              <span className="span-title">Macedon</span>
+              <span className="span-years">808 – 334 BCE</span>
+            </div>
+
+            {/* Grid lines — every 100 years from 800 to 100 BCE */}
+            <div className="hero-gridline" style={{ left: '0%' }}></div>
+            <div className="hero-gridline hero-gridline-minor" style={{ left: '14%' }}></div>
+            <div className="hero-gridline" style={{ left: '29%' }}></div>
+            <div className="hero-gridline hero-gridline-minor" style={{ left: '43%' }}></div>
+            <div className="hero-gridline" style={{ left: '57%' }}></div>
+            <div className="hero-gridline hero-gridline-minor" style={{ left: '71%' }}></div>
+            <div className="hero-gridline" style={{ left: '86%' }}></div>
+            <div className="hero-gridline hero-gridline-minor" style={{ left: '100%' }}></div>
+
+            {/* Axis — 0%=800, 29%=600, 57%=400, 86%=200 */}
+            <div className="hero-axis">
+              <div className="hero-axis-line"></div>
+              <span className="hero-tick" style={{ left: '0%' }}>800 BCE</span>
+              <span className="hero-tick" style={{ left: '29%' }}>600 BCE</span>
+              <span className="hero-tick" style={{ left: '57%' }}>400 BCE</span>
+              <span className="hero-tick" style={{ left: '86%' }}>200 BCE</span>
+            </div>
+
+            {/* Eras — Archaic ~800-480, Classical 480-323, Hellenistic 323-100 */}
+            <div className="hero-era hero-era-archaic" style={{ left: '0%', width: '46%' }}>Archaic</div>
+            <div className="hero-era hero-era-classical" style={{ left: '46%', width: '22%' }}>Classical</div>
+            <div className="hero-era hero-era-hellenistic" style={{ left: '68%', width: '32%' }}>Hellenistic</div>
+              </div>
+              <div className="hero-panel">
+                <div className="notes-panel-head">
+                  <span>Event</span>
+                  <div className="notes-panel-actions">
+                    <span className="notes-action-button">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 20h8" />
+                        <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" />
+                      </svg>
+                    </span>
+                    <span className="notes-action-button">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <polyline points="15 3 21 3 21 9" />
+                        <polyline points="9 21 3 21 3 15" />
+                        <line x1="21" y1="3" x2="14" y2="10" />
+                        <line x1="3" y1="21" x2="10" y2="14" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div className="hero-panel-body">
+                  <div className="notes-props">
+                    <div className="notes-prop">
+                      <span className="notes-prop-key">name</span>
+                      <span className="notes-prop-dots"></span>
+                      <span className="notes-prop-value strong">Battle of Marathon</span>
+                    </div>
+                    <div className="notes-prop">
+                      <span className="notes-prop-key">date</span>
+                      <span className="notes-prop-dots"></span>
+                      <span className="notes-prop-value mono">490 BCE</span>
+                    </div>
+                    <div className="notes-prop">
+                      <span className="notes-prop-key">parent</span>
+                      <span className="notes-prop-dots"></span>
+                      <span className="notes-prop-value link">Athens</span>
+                    </div>
+                  </div>
+                  <div className="notes-article">
+                    <div className="notes-article-head">
+                      <svg className="notes-article-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                        <path d="M14 3v6h6" />
+                      </svg>
+                      <span>Note</span>
+                      <span className="notes-article-meta">markdown · 312 words</span>
+                    </div>
+                    <div className="notes-article-body">
+                      <p>
+                        The <strong>Battle of Marathon</strong> took place in 490 BC during the first <a href="#">Persian invasion of Greece</a>. It was fought between the citizens of <a href="#">Athens</a>, aided by <a href="#">Plataea</a>, and a Persian force commanded by Datis and Artaphernes.
+                      </p>
+                      <img className="hero-panel-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Les_H%C3%A9ros_de_Marathon_Georges_Rochegrosse_1859.jpg/500px-Les_H%C3%A9ros_de_Marathon_Georges_Rochegrosse_1859.jpg" alt="The Heroes of Marathon" />
+                      <h4 className="hero-panel-heading">Background</h4>
+                      <p>
+                        The first Persian invasion was a response to Athenian support for the <a href="#">Ionian Revolt</a>. Darius I sent a naval expedition across the Aegean, sacking <em>Naxos</em> and <em>Eretria</em> before landing at Marathon.
+                      </p>
+                      <h4 className="hero-panel-heading">The Battle</h4>
+                      <p>
+                        The Athenian general <strong>Miltiades</strong> led roughly 10,000 hoplites against a larger Persian force. The Greek wings enveloped the Persian center in a double-envelopment. Herodotus records 6,400 Persian casualties against just 192 Athenian dead.
+                      </p>
+                      <blockquote className="hero-panel-quote">
+                        &ldquo;The Athenians at Marathon, fighting for the freedom of Greece, overthrew the might of the barbarians.&rdquo;
+                      </blockquote>
+                      <h4 className="hero-panel-heading">Aftermath</h4>
+                      <p>
+                        The victory proved that Persian forces could be defeated, emboldening the Greek city-states for the <a href="#">second Persian invasion</a> a decade later. The legendary run of <a href="#">Pheidippides</a> from the battlefield to Athens gave rise to the modern marathon race.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="hero-panel-sources">
+                    <div className="hero-panel-sources-head">
+                      <div className="hero-panel-sources-label">
+                        <svg className="hero-panel-sources-icon" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13" />
+                          <path d="M14 11a5 5 0 0 1 0 7L12.5 19.5a5 5 0 0 1-7-7L7 11" />
+                        </svg>
+                        <span>Sources</span>
+                      </div>
+                      <div className="hero-panel-sources-meta">
+                        <span>3</span>
+                        <svg className="hero-panel-sources-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="m7 10 5 5 5-5" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="hero-panel-source-list">
+                      <div className="hero-panel-source-row">
+                        <div className="hero-panel-source-type">T</div>
+                        <div className="hero-panel-source-copy">
+                          <div className="hero-panel-source-title">Histories, Book VI</div>
+                          <div className="hero-panel-source-subtitle">Herodotus</div>
+                        </div>
+                      </div>
+                      <div className="hero-panel-source-row">
+                        <div className="hero-panel-source-type">T</div>
+                        <div className="hero-panel-source-copy">
+                          <div className="hero-panel-source-title">Life of Aristides</div>
+                          <div className="hero-panel-source-subtitle">Plutarch</div>
+                        </div>
+                        <svg className="hero-panel-source-link" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M14 5h5v5" /><path d="M10 14 19 5" /><path d="M19 14v5h-14v-14h5" />
+                        </svg>
+                      </div>
+                      <div className="hero-panel-source-row">
+                        <div className="hero-panel-source-type">T</div>
+                        <div className="hero-panel-source-copy">
+                          <div className="hero-panel-source-title">Description of Greece</div>
+                          <div className="hero-panel-source-subtitle">Pausanias</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="hero-scrollbar">
+                <div className="hero-scrollbar-track">
+                  <div className="hero-scrollbar-play">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 20 12 6 21" /></svg>
+                  </div>
+                  <div className="hero-scrollbar-rail">
+                    <div className="hero-scrollbar-thumb"></div>
+                  </div>
+                  <div className="hero-scrollbar-year">500 BCE</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -141,7 +511,7 @@ function Home({ activeThemeId, onThemeSelect }) {
             </div>
             <div className="feature-card-body">
               <h3>Spans</h3>
-              <p>Draw a period that runs from one date to another, which can branch from or merge them into other spans to show how timelines split and converge.</p>
+              <p>Draw a period that runs from one date to another. Spans can branch from or merge into other spans to show how timelines split and converge.</p>
             </div>
           </div>
 
@@ -315,7 +685,7 @@ function Home({ activeThemeId, onThemeSelect }) {
                 <div className="views-map-scene">
                   <img
                     className="views-map-image"
-                    src={`${import.meta.env.BASE_URL}map.png`}
+                    src={`${import.meta.env.BASE_URL}map.webp`}
                     alt=""
                   />
                   <div className="views-map-pin">
@@ -338,7 +708,7 @@ function Home({ activeThemeId, onThemeSelect }) {
               </div>
             </div>
             <div className="views-card-body">
-              <h3>Map view</h3>
+              <h3>Map View</h3>
               <p>
                 Give any event or span coordinates and watch your timeline unfold across geography, with campaigns, trade
                 routes, and migrations traced where they actually happened.
@@ -350,7 +720,7 @@ function Home({ activeThemeId, onThemeSelect }) {
             <SpreadsheetDemo />
             <div className="views-card-body">
               <div className="views-card-head">
-                <h3>Spreadsheet view</h3>
+                <h3>Spreadsheet View</h3>
                 <span className="views-card-badge">Coming Soon</span>
               </div>
               <p>
@@ -484,9 +854,20 @@ function SpreadsheetDemo() {
     }
   }
 
+  const parseDate = (str) => {
+    if (str === '—') return Infinity
+    const num = parseInt(str)
+    return str.includes('BCE') ? -num : num
+  }
+
   const sorted = sortKey
     ? [...spreadsheetRows].sort((a, b) => {
-        const cmp = a[sortKey].localeCompare(b[sortKey])
+        let cmp
+        if (sortKey === 'start' || sortKey === 'end') {
+          cmp = parseDate(a[sortKey]) - parseDate(b[sortKey])
+        } else {
+          cmp = a[sortKey].localeCompare(b[sortKey])
+        }
         return sortAsc ? cmp : -cmp
       })
     : spreadsheetRows
@@ -502,17 +883,15 @@ function SpreadsheetDemo() {
             <div className="views-table-head">
               <span className={`views-table-sortable${sortKey === 'type' ? ' is-sorted' : ''}`} onClick={() => handleSort('type')}>Type <span className="views-table-sort-icon">{sortIcon('type')}</span></span>
               <span className={`views-table-sortable${sortKey === 'name' ? ' is-sorted' : ''}`} onClick={() => handleSort('name')}>Name <span className="views-table-sort-icon">{sortIcon('name')}</span></span>
-              <span className={`views-table-sortable${sortKey === 'parent' ? ' is-sorted' : ''}`} onClick={() => handleSort('parent')}>Parent <span className="views-table-sort-icon">{sortIcon('parent')}</span></span>
-              <span>Tags</span>
-              <span>Start</span>
-              <span>End</span>
+              <span className={`views-table-sortable${sortKey === 'tags' ? ' is-sorted' : ''}`} onClick={() => handleSort('tags')}>Tags <span className="views-table-sort-icon">{sortIcon('tags')}</span></span>
+              <span className={`views-table-sortable${sortKey === 'start' ? ' is-sorted' : ''}`} onClick={() => handleSort('start')}>Start <span className="views-table-sort-icon">{sortIcon('start')}</span></span>
+              <span className={`views-table-sortable${sortKey === 'end' ? ' is-sorted' : ''}`} onClick={() => handleSort('end')}>End <span className="views-table-sort-icon">{sortIcon('end')}</span></span>
             </div>
             <div className="views-table-scroll">
               {sorted.map((row) => (
                 <div key={row.name} className="views-table-row">
                   <span className="views-table-type">{row.type}</span>
                   <span className="views-table-name">{row.name}</span>
-                  <span className="views-table-parent">{row.parent}</span>
                   <span className="views-table-tags">{row.tags}</span>
                   <span className="views-table-date">{row.start}</span>
                   <span className="views-table-date">{row.end}</span>
