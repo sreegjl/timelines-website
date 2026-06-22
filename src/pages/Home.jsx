@@ -5,6 +5,8 @@ import usePageMeta from '../hooks/usePageMeta'
 
 function Home({ activeThemeId, onThemeSelect }) {
   usePageMeta()
+  const [checklist, setChecklist] = useState([true, true, false])
+  const toggleCheck = (i) => setChecklist((prev) => prev.map((v, j) => (j === i ? !v : v)))
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -586,59 +588,183 @@ function Home({ activeThemeId, onThemeSelect }) {
                 </div>
               </div>
 
-              <div className="notes-article">
-                <div className="notes-article-head">
-                  <svg className="notes-article-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <details className="notes-collapse" open>
+                <summary className="notes-section-head">
+                  <svg className="notes-section-icon" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
                     <path d="M14 3v6h6" />
                   </svg>
                   <span>Note</span>
-                  <span className="notes-article-meta">markdown · 521 words</span>
-                </div>
+                  <span className="notes-section-meta">markdown · 521 words</span>
+                  <svg className="notes-section-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+                </summary>
                 <div className="notes-article-body">
                   <p>
-                    Alexander the Great died in Babylon in June 323 BC after a brief but severe illness. Ancient
-                    sources describe fever, weakness, and an inability to speak in his final days. The exact cause
-                    remains uncertain, with possibilities including infection, typhoid, malaria, or complications
-                    from wounds. His sudden death at age 32 ended his empire at its peak and triggered the Wars of
-                    the Diadochi.
+                    <strong>Alexander the Great</strong> died in <a href="#">Babylon</a> in June 323 BC after a
+                    brief but severe illness. Ancient sources describe fever, weakness, and an inability to speak
+                    in his final days. The exact cause remains <em>uncertain</em>, with possibilities including
+                    infection, typhoid, malaria, or complications from wounds.
                   </p>
-                  <h3 className="mt">
-                    Background (
-                    <a href="https://en.wikipedia.org/wiki/Death_of_Alexander_the_Great">Wikipedia</a>
-                    )
-                  </h3>
+                  <h3 className="mt">Proposed Causes</h3>
+                  <ul>
+                    <li><a href="#">Typhoid fever</a> complicated by bowel perforation</li>
+                    <li>Acute <em>malaria</em>, possibly falciparum strain</li>
+                    <li>Complications from chronic <strong>battle wounds</strong> and heavy drinking</li>
+                  </ul>
+                  <blockquote>
+                    &ldquo;When asked to whom he left his empire, Alexander replied: <em>to the strongest.</em>&rdquo;
+                    {' '}— Diodorus Siculus
+                  </blockquote>
                   <p>
-                    The death of Alexander the Great and subsequent related events have been the subjects of debates.
-                    According to a Babylonian astronomical diary, Alexander died in the palace of Nebuchadnezzar II
-                    in Babylon between the evening of 10 June and the evening of 11 June 323 BC, at the age of 32.
+                    His body was initially placed in a gold sarcophagus, later transferred
+                    to <a href="#">Alexandria</a> by <a href="#">Ptolemy I</a>, where it remained a site of
+                    pilgrimage for centuries. Both <a href="#">Julius Caesar</a> and <a href="#">Augustus</a> visited
+                    the tomb. Its location has been lost since late antiquity.
                   </p>
+                  <div className="notes-embed">
+                    <div className="notes-embed-thumb">
+                      <img src={`${import.meta.env.BASE_URL}yt-crash-course-thumb.jpg`} alt="YouTube video" />
+                      <div className="notes-embed-top">
+                        <img className="notes-embed-pfp" src={`${import.meta.env.BASE_URL}yt-crash-course-pfp.jpg`} alt="Crash Course" />
+                        <div className="notes-embed-top-text">
+                          <div className="notes-embed-title">Alexander the Great: Crash Course World History #8</div>
+                          <div className="notes-embed-channel">Crash Course</div>
+                        </div>
+                      </div>
+                      <div className="notes-embed-play">
+                        <svg viewBox="0 0 68 48" aria-hidden="true">
+                          <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red" />
+                          <path d="M45 24 27 14v20" fill="#fff" />
+                        </svg>
+                      </div>
+                      <div className="notes-embed-bar">
+                        <div className="notes-embed-progress">
+                          <div className="notes-embed-progress-fill"></div>
+                        </div>
+                        <div className="notes-embed-controls">
+                          <div className="notes-embed-controls-left">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21" fill="#fff" /></svg>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 4 15 12 5 20" fill="#fff" /><line x1="19" y1="5" x2="19" y2="19" stroke="#fff" strokeWidth="2" /></svg>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19" fill="#fff" /><path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="#fff" strokeWidth="1.5" fill="none" /></svg>
+                            <span className="notes-embed-time">0:00 / 11:01</span>
+                          </div>
+                          <div className="notes-embed-controls-right">
+                            <a className="notes-embed-yt-btn" href="https://youtu.be/0LsrkWDCvxg" target="_blank" rel="noopener noreferrer">
+                              <svg viewBox="0 0 68 48" aria-hidden="true">
+                                <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red" />
+                                <path d="M45 24 27 14v20" fill="#fff" />
+                              </svg>
+                              Watch on YouTube
+                            </a>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" stroke="#fff" strokeWidth="1.5" fill="none" /></svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="mt">Aftermath</h3>
                   <p>
-                    Macedonians and local residents wept at the news of the death, while Achaemenid subjects were
-                    forced to shave their heads. The mother of Darius III, Sisygambis, having learned of Alexander's
-                    death, became depressed and killed herself later. Historians vary in their assessments of primary
-                    sources about Alexander's death, which has resulted in different views about its cause and
-                    circumstances.
+                    His sudden death at age 32 left no clear successor and triggered
+                    the <a href="#">Wars of the Diadochi</a>, a forty-year struggle among his generals to
+                    divide the empire. <mark>Perdiccas initially held the regency</mark>, but was assassinated
+                    within two years. By 281 BC the empire had fractured into the <a href="#">Ptolemaic</a>,{' '}
+                    <a href="#">Seleucid</a>, and <a href="#">Antigonid</a> kingdoms.
                   </p>
+                  <h3 className="mt">Reading List</h3>
+                  <ul className="notes-checklist">
+                    {['The Campaigns of Alexander, Arrian', 'Alexander of Macedon, Peter Green', 'Ghost on the Throne, James Romm'].map((item, i) => (
+                      <li key={i} className={checklist[i] ? 'checked' : ''} onClick={() => toggleCheck(i)}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
+              </details>
 
-              <div className="notes-sources">
-                <div className="notes-sources-head">
-                  <div className="notes-sources-label">
-                    <svg className="notes-sources-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13" />
-                      <path d="M14 11a5 5 0 0 1 0 7L12.5 19.5a5 5 0 0 1-7-7L7 11" />
-                    </svg>
-                    <span>Sources</span>
+              <details className="notes-collapse" open>
+                <summary className="notes-section-head">
+                  <svg className="notes-section-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M2 12h20" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z" />
+                  </svg>
+                  <span>Wiki</span>
+                  <span className="notes-section-meta">
+                    Linked Article
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5" /><path d="M10 14 19 5" /><path d="M19 14v5h-14v-14h5" /></svg>
+                  </span>
+                  <svg className="notes-section-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+                </summary>
+                <div className="notes-wiki-body">
+                  <div className="notes-wiki-infobox">
+                    <div className="notes-wiki-infobox-title">Death of Alexander the Great</div>
+                    <figure className="notes-wiki-figure">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Dying_Alexander.jpg/250px-Dying_Alexander.jpg" alt="Dying Alexander" />
+                      <figcaption>Dying Alexander, copy of a 2nd&#8209;century BC sculpture<br />Photo: <a href="https://commons.wikimedia.org/wiki/File:Dying_Alexander.jpg" target="_blank" rel="noopener noreferrer">Urek Meniashvili</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a></figcaption>
+                    </figure>
+                    <div className="notes-wiki-infobox-row">
+                      <span className="notes-wiki-infobox-label">Date</span>
+                      <span className="notes-wiki-infobox-data">10 or 11 June 323 BC</span>
+                    </div>
+                    <div className="notes-wiki-infobox-row">
+                      <span className="notes-wiki-infobox-label">Location</span>
+                      <span className="notes-wiki-infobox-data"><a href="#">Palace of Nebuchadnezzar II</a>, <a href="#">Babylon</a></span>
+                    </div>
+                    <div className="notes-wiki-infobox-row">
+                      <span className="notes-wiki-infobox-label">Cause</span>
+                      <span className="notes-wiki-infobox-data">Disputed (<a href="#">typhoid</a>, <a href="#">malaria</a>, <a href="#">poisoning</a>)</span>
+                    </div>
+                    <div className="notes-wiki-infobox-row">
+                      <span className="notes-wiki-infobox-label">Buried</span>
+                      <span className="notes-wiki-infobox-data"><a href="#">Alexandria</a>, Egypt</span>
+                    </div>
                   </div>
-                  <div className="notes-sources-meta">
-                    <span>2</span>
-                    <svg className="notes-sources-chevron" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m7 10 5 5 5-5" />
-                    </svg>
-                  </div>
+                  <p>
+                    The <strong>death of Alexander the Great</strong> and subsequent related events have been the
+                    subjects of debates. According to a <a href="#">Babylonian astronomical diary</a>, Alexander
+                    died in the palace of <a href="#">Nebuchadnezzar II</a> in <a href="#">Babylon</a> between
+                    the evening of 10 June and the evening of 11 June 323 BC, at the age of 32.
+                  </p>
+                  <p>
+                    Macedonians and local residents wept at the news of the death, while <a href="#">Achaemenid</a> subjects
+                    were forced to shave their heads. The mother of <a href="#">Darius III</a>, <a href="#">Sisygambis</a>,
+                    upon learning of Alexander's death, refused to eat and died five days later.
+                  </p>
+                  <h4>Background</h4>
+                  <p>
+                    In February 323 BC, Alexander ordered his armies to prepare for the march
+                    to <a href="#">Babylon</a>. According to <a href="#">Arrian</a>, <a href="#">Chaldean</a> astrologers
+                    warned Alexander against entering the city, claiming their deity <a href="#">Bel</a> had
+                    cautioned that doing so would prove fatal.
+                  </p>
+                  <h4>Account of his final days</h4>
+                  <p>
+                    According to <a href="#">Plutarch</a>, Alexander held a banquet for his companion <a href="#">Medius of Larissa</a>.
+                    After drinking heavily he was seized with a fever. Over the next eleven days his condition
+                    steadily worsened. By June 9 he could no longer speak, and his soldiers were admitted one by
+                    one to file past his bed. He reportedly acknowledged each with a slight movement of his eyes.
+                  </p>
+                  <h4>Succession</h4>
+                  <p>
+                    When asked to whom he left his empire, he is said to have whispered
+                    {' '}<em>&ldquo;to the strongest.&rdquo;</em> His generals, the <a href="#">Diadochi</a>, immediately
+                    began positioning themselves for power. <a href="#">Perdiccas</a> assumed the regency, while
+                    {' '}<a href="#">Ptolemy</a> seized Egypt, <a href="#">Seleucus</a> took Mesopotamia, and
+                    {' '}<a href="#">Antigonus</a> claimed Anatolia. Their conflicts lasted over forty years.
+                  </p>
                 </div>
+              </details>
+
+              <details className="notes-collapse" open>
+                <summary className="notes-section-head">
+                  <svg className="notes-section-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13" />
+                    <path d="M14 11a5 5 0 0 1 0 7L12.5 19.5a5 5 0 0 1-7-7L7 11" />
+                  </svg>
+                  <span>Sources</span>
+                  <span className="notes-section-meta">2</span>
+                  <svg className="notes-section-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+                </summary>
 
                 <div className="notes-source-list">
                   <div className="notes-source-row">
@@ -662,7 +788,7 @@ function Home({ activeThemeId, onThemeSelect }) {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </details>
             </div>
         </div>
       </section>
@@ -823,6 +949,7 @@ function Home({ activeThemeId, onThemeSelect }) {
           </div>
         </div>
       </section>
+
     </div>
   )
 }
