@@ -111,7 +111,7 @@ function Home({ activeThemeId, onThemeSelect }) {
                 </div>
                 <div className="hero-sidebar-scroll">
                 <div className="hero-sidebar-group">
-                  <div className="hero-sidebar-group-head" style={{ color: '#8a7a4c' }}>
+                  <div className="hero-sidebar-group-head" style={{ color: '#a08850' }}>
                     <svg className="hero-sidebar-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                     <span className="hero-sidebar-group-name">Classical</span>
                     <span className="hero-sidebar-group-count">8</span>
@@ -127,7 +127,7 @@ function Home({ activeThemeId, onThemeSelect }) {
                   <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Peloponnesian War</span><span className="sidebar-item-year">431 BCE</span></div>
                 </div>
                 <div className="hero-sidebar-group">
-                  <div className="hero-sidebar-group-head" style={{ color: '#8f7a4c' }}>
+                  <div className="hero-sidebar-group-head" style={{ color: '#8f7260' }}>
                     <svg className="hero-sidebar-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                     <span className="hero-sidebar-group-name">Hellenistic</span>
                     <span className="hero-sidebar-group-count">4</span>
