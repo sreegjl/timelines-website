@@ -1,13 +1,29 @@
 import { useState, useEffect } from 'react'
+import usePageMeta from '../hooks/usePageMeta'
 
-const images = Object.entries(
+const allImages = Object.entries(
   import.meta.glob('../gallery/*.{jpg,jpeg,png,gif,webp,svg,avif,PNG,JPG,JPEG,WEBP}', { eager: true })
 ).map(([path, mod]) => ({
   src: mod.default,
   name: path.split('/').pop().replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
+  ext: path.split('.').pop().toLowerCase(),
 }))
 
+const imageMap = new Map()
+for (const img of allImages) {
+  const existing = imageMap.get(img.name)
+  if (!existing || img.ext === 'webp') {
+    imageMap.set(img.name, img)
+  }
+}
+const images = [...imageMap.values()]
+
 function Gallery() {
+  usePageMeta({
+    title: 'Gallery',
+    description: 'Screenshots and visuals from Timelines.',
+  })
+
   const [selectedIndex, setSelectedIndex] = useState(null)
 
   const prev = () => setSelectedIndex((i) => (i - 1 + images.length) % images.length)

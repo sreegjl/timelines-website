@@ -1,4 +1,11 @@
+import usePageMeta from '../hooks/usePageMeta'
+
 function Download() {
+  usePageMeta({
+    title: 'Download',
+    description: 'Download Timelines for Windows or macOS. Free, open-source, and local-first.',
+  })
+
   return (
     <div className="page download">
 

@@ -1,4 +1,10 @@
+import usePageMeta from '../hooks/usePageMeta'
+
 function Changelog() {
+  usePageMeta({
+    title: 'Changelog',
+    description: 'See what\'s new in each release of Timelines.',
+  })
   const releases = [
     {
       version: '0.5.0-alpha.3',
