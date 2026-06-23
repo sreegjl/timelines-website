@@ -1016,7 +1016,7 @@ function SpreadsheetDemo() {
             </div>
             <div className="views-table-scroll">
               {sorted.map((row) => (
-                <div key={row.name} className="views-table-row">
+                <div key={row.name} className={`views-table-row${row.name === 'Battle of Marathon' ? ' selected' : ''}`}>
                   <span className="views-table-type">{row.type}</span>
                   <span className="views-table-name">{row.name}</span>
                   <span className="views-table-tags">{row.tags}</span>

@@ -13,7 +13,7 @@ function Changelog() {
         'Reworked theme color variables (renamed keys, added theme type/collection metadata)',
         'Event overlap issue resolved when thumbnails enabled',
       ],
-      solid: true,
+      solid: false,
     },
     {
       version: '0.5.0-alpha.2',
@@ -23,7 +23,7 @@ function Changelog() {
         'Portable asset paths, enhanced video in notes',
         'Fixed thumbnail drag-and-drop, overlapping thumbnails',
       ],
-      solid: true,
+      solid: false,
     },
     {
       version: '0.5.0-alpha.1',
@@ -42,7 +42,7 @@ function Changelog() {
         'Notes reorganized into a .notes folder',
         'Fixed timeline creation in subfolders and search',
       ],
-      solid: true,
+      solid: false,
     },
     {
       version: '0.4.0-alpha.3',
@@ -52,7 +52,7 @@ function Changelog() {
         'New Parchment v2 theme',
         'Homepage sorting, event group inheritance',
       ],
-      solid: true,
+      solid: false,
     },
     {
       version: '0.4.0-alpha.2',
@@ -62,7 +62,7 @@ function Changelog() {
         'Full MediaWiki support, calendar input, OSM attribution',
         'Grouping customization for eras and spans',
       ],
-      solid: true,
+      solid: false,
     },
     {
       version: '0.4.0-alpha.1',
@@ -116,6 +116,11 @@ function Changelog() {
       <div className="changelog-list">
         {releases.map((release) => (
           <div key={release.version} className={`changelog-entry${release.solid ? ' solid' : ''}`}>
+            {/^\d/.test(release.version) && (
+              <a className="changelog-link" href={`https://github.com/sreegjl/timelines/releases/tag/v${release.version}`} target="_blank" rel="noopener noreferrer" aria-label="View release on GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5" /><path d="M10 14 19 5" /><path d="M19 14v5h-14v-14h5" /></svg>
+              </a>
+            )}
             <div className="changelog-header">
               <h2>{/^\d/.test(release.version) ? 'v' : ''}{release.version}</h2>
               <span className="changelog-date">{release.date}</span>
