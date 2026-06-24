@@ -1,12 +1,12 @@
-# Timelines
+# Timelines Studio
 
-## What Is Timelines?
+## What Is Timelines Studio?
 
-Timelines is a free, open-source desktop app for creating interactive, customizable timelines. Built for worldbuilding, history, research, and any project that lives on a timeline, timelines lets you build  detailed chronologies on a visual canvas. You can place events at specific points in time, draw spans across periods, and layer eras as background context, and then organize everything with groups, tags, and linked notes.
+Timelines Studio is a free, open-source desktop app for creating interactive, customizable timelines. Built for worldbuilding, history, research, and any project that lives on a timeline, Timelines Studio lets you build detailed chronologies on a visual canvas. You can place events at specific points in time, draw spans across periods, and layer eras as background context, and then organize everything with groups, tags, and linked notes.
 
 Each timeline has a configurable start point, end point, and detail level, covering any scale from a few days to billions of years. It runs fully offline and stores data as .timeline JSON files on your machine.
 
-## What Is Timelines For?
+## What Is Timelines Studio For?
 
 - Mapping the history of a fictional world or campaign setting
 - Visualizing historical research across long periods

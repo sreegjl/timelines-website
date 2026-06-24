@@ -11,7 +11,7 @@ export default function usePageMeta({ title, description } = {}) {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    const fullTitle = title ? `${title} — Timelines` : defaults.title
+    const fullTitle = title ? `${title} — Timelines Studio` : defaults.title
     const desc = description || defaults.description
     const canonical = `${defaults.siteUrl}${pathname === '/' ? '' : pathname}`
 
