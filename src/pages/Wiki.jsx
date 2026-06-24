@@ -41,7 +41,7 @@ function Wiki() {
   const activePage = pages.find((p) => p.slug === activeSlug)
 
   usePageMeta({
-    title: activeSlug === 'Home' ? 'Wiki' : `${activeSlug} — Wiki`,
+    title: activeSlug === 'Home' ? 'Wiki' : activeSlug,
     description: `Timelines wiki — ${activeSlug.replace(/-/g, ' ')}`,
   })
 
