@@ -51,6 +51,12 @@ function App() {
             <Route path="/theme-builder" element={<ThemeBuilder />} />
           </Routes>
         </main>
+        <div className="survey-callout">
+          <p>Help shape the future of Timelines. Takes under 2 minutes.</p>
+          <a href="https://forms.gle/Bbe74yyrZ7zhKeFL8" className="btn btn-primary survey-callout-btn" target="_blank" rel="noopener noreferrer">
+            Take the Survey <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
         <Footer />
       </div>
     </BrowserRouter>
