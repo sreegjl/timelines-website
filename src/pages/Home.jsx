@@ -939,7 +939,9 @@ function Home({ activeThemeId, onThemeSelect }) {
           </div>
           <div className="open-source-stats">
             <div className="open-source-stat">
-              <span className="open-source-stat-value">GPL-3.0</span>
+              <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener noreferrer" className="open-source-gpl">
+                <img src="/gplv3.png" alt="GPL-3.0 License" />
+              </a>
               <span className="open-source-stat-desc">Free and open-source, always</span>
             </div>
             <div className="open-source-stat">
@@ -949,6 +951,15 @@ function Home({ activeThemeId, onThemeSelect }) {
           </div>
         </div>
       </section>
+
+      <div className="home-survey-wrap">
+        <div className="survey-callout">
+          <p>Help shape the future of Timelines. Takes under 2 minutes.</p>
+          <a href="https://forms.gle/Bbe74yyrZ7zhKeFL8" className="btn btn-primary survey-callout-btn" target="_blank" rel="noopener noreferrer">
+            Take the Survey <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
 
     </div>
   )

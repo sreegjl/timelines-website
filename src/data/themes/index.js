@@ -48,6 +48,7 @@ export function applyThemeToDocument(theme) {
   root.style.setProperty('--color-highlight', colors['highlight-color'])
   root.style.setProperty('--color-selection', colors['selection-color'])
   root.style.setProperty('--color-era-label', colors['era-label'])
+  root.setAttribute('data-theme-type', theme.type || 'light')
 
   if (theme?.font?.family) {
     root.style.setProperty('--font-sans', `"${theme.font.family}", system-ui, -apple-system, BlinkMacSystemFont, sans-serif`)
