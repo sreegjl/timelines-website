@@ -66,6 +66,13 @@ function Download() {
       <a href="https://github.com/sreegjl/timelines/releases" className="download-older-link" target="_blank" rel="noopener noreferrer">
         Older versions &amp; build from source on GitHub <span aria-hidden="true">&rarr;</span>
       </a>
+
+      <div className="survey-callout">
+        <p>Help shape the future of Timelines. Takes under 2 minutes.</p>
+        <a href="https://forms.gle/Bbe74yyrZ7zhKeFL8" className="btn btn-primary survey-callout-btn" target="_blank" rel="noopener noreferrer">
+          Take the Survey <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
     </div>
   )
 }
