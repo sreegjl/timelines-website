@@ -7,6 +7,19 @@ function Changelog() {
   })
   const releases = [
     {
+      version: '0.6.0-alpha.1',
+      date: 'July 1, 2026',
+      changes: [
+        'Spreadsheet view with CSV export',
+        'Advanced filter engine across sidebar, spreadsheet, and search',
+        'Groups can be positioned below the timeline with drag-to-reorder',
+        'Span descriptions displayed directly on timeline elements',
+        'Logarithmic scaling option for timelines',
+        'Marketplace redesign, right panel locking, adjustable event size and font sliders',
+      ],
+      solid: true,
+    },
+    {
       version: '0.5.0-alpha.3',
       date: 'June 15, 2026',
       changes: [
