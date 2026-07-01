@@ -847,7 +847,6 @@ function Home({ activeThemeId, onThemeSelect }) {
             <div className="views-card-body">
               <div className="views-card-head">
                 <h3>Spreadsheet View</h3>
-                <span className="views-card-badge">Coming Soon</span>
               </div>
               <p>
                 Flip the whole canvas into a sortable table to edit dates, rename entries, and bulk-fix details,
