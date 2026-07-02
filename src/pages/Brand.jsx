@@ -165,7 +165,8 @@ function Brand() {
         </div>
         <p className="brand-contact">
           Questions about brand usage? Open an issue on{' '}
-          <a href="https://github.com/sreegjl/timelines/issues" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          <a href="https://github.com/sreegjl/timelines/issues" target="_blank" rel="noopener noreferrer">GitHub</a>{' '}
+          or email <a href="mailto:sree@timelines.studio">sree@timelines.studio</a>.
         </p>
       </section>
     </div>
