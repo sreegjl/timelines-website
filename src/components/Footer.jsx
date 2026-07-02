@@ -15,6 +15,7 @@ function Footer() {
               <Link to="/download">Download</Link>
               <Link to="/changelog">Changelog</Link>
               <Link to="/gallery">Gallery</Link>
+              <Link to="/brand">Brand</Link>
             </div>
             <div className="footer-col">
               <h4>Community</h4>

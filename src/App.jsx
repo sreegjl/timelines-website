@@ -8,6 +8,7 @@ import Changelog from './pages/Changelog'
 import Gallery from './pages/Gallery'
 import ThemeBuilder from './pages/ThemeBuilder'
 import Wiki from './pages/Wiki'
+import Brand from './pages/Brand'
 import {
   applyThemeToDocument,
   defaultThemeId,
@@ -56,6 +57,7 @@ function App() {
             <Route path="/wiki/:page" element={<Wiki />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/theme-builder" element={<ThemeBuilder />} />
+            <Route path="/brand" element={<Brand />} />
           </Routes>
         </main>
         <Footer />
