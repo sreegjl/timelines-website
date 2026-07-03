@@ -1,23 +1,9 @@
 import { useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function Navbar() {
   const location = useLocation()
-  const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
-
-  const scrollToSection = (e, id) => {
-    e.preventDefault()
-    setMenuOpen(false)
-    if (location.pathname === '/') {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    } else {
-      navigate('/')
-      setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-      }, 100)
-    }
-  }
 
   return (
     <nav className="navbar">
@@ -58,8 +44,6 @@ function Navbar() {
           <Link to="/gallery" onClick={() => setMenuOpen(false)} className={location.pathname === '/gallery' ? 'active' : ''}>Gallery</Link>
           <Link to="/wiki" onClick={() => setMenuOpen(false)} className={location.pathname.startsWith('/wiki') ? 'active' : ''}>Wiki</Link>
           <Link to="/changelog" onClick={() => setMenuOpen(false)} className={location.pathname === '/changelog' ? 'active' : ''}>Changelog</Link>
-          {/* Plain anchor: the viewer is a separate app outside the SPA */}
-          <a href="/viewer/" onClick={() => setMenuOpen(false)}>Viewer</a>
           <a href="https://ko-fi.com/sreegjl" className="btn-donate" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path className="btn-donate-heart-fill" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.04 3 5.5l7 7Z" />

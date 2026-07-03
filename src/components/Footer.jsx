@@ -15,6 +15,8 @@ function Footer() {
               <Link to="/download">Download</Link>
               <Link to="/changelog">Changelog</Link>
               <Link to="/gallery">Gallery</Link>
+              {/* Plain anchor: the viewer is a separate app outside the SPA */}
+              <a href="/viewer/">Viewer (beta)</a>
               <Link to="/brand">Brand</Link>
             </div>
             <div className="footer-col">
