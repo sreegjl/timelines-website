@@ -13,8 +13,7 @@ function Footer() {
             <div className="footer-col">
               <h4>Product</h4>
               <Link to="/download">Download</Link>
-              {/* Plain anchor: the viewer is a separate app outside the SPA */}
-              <a href="/viewer/">Viewer (beta)</a>
+              <Link to="/viewer-landing">Viewer (beta)</Link>
             </div>
             <div className="footer-col">
               <h4>Resources</h4>

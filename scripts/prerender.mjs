@@ -17,6 +17,7 @@ const routes = [
   '/changelog',
   '/gallery',
   '/brand',
+  '/viewer-landing',
   '/wiki',
   ...wikiPages.filter((p) => p !== 'Home').map((p) => `/wiki/${p}`),
 ]
