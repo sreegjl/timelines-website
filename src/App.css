@@ -4026,6 +4026,117 @@ main:has(.home) {
 
 
 /* ================================================================
+   Viewer landing page
+   ================================================================ */
+
+.page.viewer-landing {
+  max-width: 640px;
+}
+
+.viewer-drop-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-card);
+  border: 1.5px dashed var(--color-border);
+  border-radius: 18px;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.viewer-drop-zone:hover,
+.viewer-drop-zone:focus-visible,
+.viewer-drop-zone.drag-active {
+  border-color: var(--color-text-muted);
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--color-text) 10%, transparent);
+}
+
+.viewer-drop-zone.drag-active {
+  border-color: var(--color-accent);
+}
+
+.viewer-drop-title {
+  margin: 1rem 0 0.25rem;
+  color: var(--color-text);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.viewer-drop-hint {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.viewer-file-input {
+  display: none;
+}
+
+.viewer-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.viewer-divider::before,
+.viewer-divider::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid var(--color-border);
+}
+
+.viewer-gh-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.viewer-gh-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.viewer-gh-row input {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.88rem;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.viewer-gh-row input:focus {
+  border-color: var(--color-accent);
+}
+
+.viewer-error {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  color: #d25c5c;
+}
+
+@media (max-width: 520px) {
+  .viewer-gh-row {
+    flex-direction: column;
+  }
+}
+
+/* ================================================================
    Wiki
    ================================================================ */
 

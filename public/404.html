@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      var viewerMatch = window.location.pathname.match(/^\/viewer\/ghu\/(.*)$/);
+      var viewerMatch = window.location.pathname.match(/^\/viewer\/(ghu?)\/(.*)$/);
       if (viewerMatch) {
-        window.location.replace('/viewer/#ghu/' + viewerMatch[1]);
+        window.location.replace('/viewer/#' + viewerMatch[1] + '/' + viewerMatch[2]);
       } else {
         var path = window.location.pathname + window.location.search + window.location.hash;
         window.location.replace('/' + '?p=' + encodeURIComponent(path));
