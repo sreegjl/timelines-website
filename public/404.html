@@ -3,8 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      var path = window.location.pathname + window.location.search + window.location.hash;
-      window.location.replace('/' + '?p=' + encodeURIComponent(path));
+      var viewerMatch = window.location.pathname.match(/^\/viewer\/ghu\/(.*)$/);
+      if (viewerMatch) {
+        window.location.replace('/viewer/#ghu/' + viewerMatch[1]);
+      } else {
+        var path = window.location.pathname + window.location.search + window.location.hash;
+        window.location.replace('/' + '?p=' + encodeURIComponent(path));
+      }
     </script>
   </head>
 </html>
