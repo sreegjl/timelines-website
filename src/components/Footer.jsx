@@ -13,10 +13,14 @@ function Footer() {
             <div className="footer-col">
               <h4>Product</h4>
               <Link to="/download">Download</Link>
-              <Link to="/changelog">Changelog</Link>
-              <Link to="/gallery">Gallery</Link>
               {/* Plain anchor: the viewer is a separate app outside the SPA */}
               <a href="/viewer/">Viewer (beta)</a>
+            </div>
+            <div className="footer-col">
+              <h4>Resources</h4>
+              <Link to="/gallery">Gallery</Link>
+              <Link to="/wiki">Wiki</Link>
+              <Link to="/changelog">Changelog</Link>
               <Link to="/brand">Brand</Link>
             </div>
             <div className="footer-col">
