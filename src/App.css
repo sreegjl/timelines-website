@@ -3418,6 +3418,7 @@ main:has(.home) {
 .footer-links {
   display: flex;
   gap: 3rem;
+  flex-wrap: wrap;
 }
 
 .footer-col {
