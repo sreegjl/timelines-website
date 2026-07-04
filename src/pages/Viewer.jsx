@@ -2,6 +2,9 @@ import { useRef, useState } from 'react'
 import usePageMeta from '../hooks/usePageMeta'
 
 const VIEWER_PAYLOAD_KEY = 'timelines-viewer-payload'
+// Packaged .timeline files (zips) are binary, so they hand off base64-encoded
+// under a separate key the viewer knows to decode
+const VIEWER_PACKAGE_KEY = 'timelines-viewer-package'
 
 function hasTimelineExtension(name) {
   const lower = name.toLowerCase()
@@ -63,8 +66,25 @@ function Viewer() {
       return
     }
     setFileError('')
-    const text = await file.text()
-    sessionStorage.setItem(VIEWER_PAYLOAD_KEY, text)
+    const bytes = new Uint8Array(await file.arrayBuffer())
+    const isPackage = bytes.length >= 2 && bytes[0] === 0x50 && bytes[1] === 0x4b // 'PK'
+    try {
+      if (isPackage) {
+        let binary = ''
+        const CHUNK = 0x8000
+        for (let i = 0; i < bytes.length; i += CHUNK) {
+          binary += String.fromCharCode(...bytes.subarray(i, i + CHUNK))
+        }
+        sessionStorage.setItem(VIEWER_PACKAGE_KEY, btoa(binary))
+        sessionStorage.removeItem(VIEWER_PAYLOAD_KEY)
+      } else {
+        sessionStorage.setItem(VIEWER_PAYLOAD_KEY, new TextDecoder().decode(bytes))
+        sessionStorage.removeItem(VIEWER_PACKAGE_KEY)
+      }
+    } catch {
+      setFileError('That file is too large to open from this page. Try loading it from a GitHub link instead.')
+      return
+    }
     window.location.href = '/viewer/'
   }
 
