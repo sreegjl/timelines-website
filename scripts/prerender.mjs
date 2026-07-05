@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'fs'
-import { resolve, dirname } from 'path'
+import { resolve, dirname, relative, isAbsolute } from 'path'
 import { fileURLToPath } from 'url'
 import { createServer } from 'http'
 import puppeteer from 'puppeteer'
@@ -40,7 +40,12 @@ const mimeTypes = {
 function serve(dir, port) {
   return new Promise((res) => {
     const server = createServer((req, res2) => {
-      let filePath = resolve(dir, req.url === '/' ? 'index.html' : req.url.slice(1))
+      const filePath = resolveRequestPath(dir, req.url || '/')
+      if (!filePath) {
+        res2.writeHead(404, { 'Content-Type': 'text/plain' })
+        res2.end('Not found')
+        return
+      }
       try {
         const data = readFileSync(filePath)
         const ext = '.' + filePath.split('.').pop()
@@ -54,6 +59,25 @@ function serve(dir, port) {
     })
     server.listen(port, () => res(server))
   })
+}
+
+function resolveRequestPath(dir, requestUrl) {
+  try {
+    const { pathname } = new URL(requestUrl, 'http://localhost')
+    const relativePath = pathname === '/'
+      ? 'index.html'
+      : decodeURIComponent(pathname.replace(/^\/+/, ''))
+    const filePath = resolve(dir, relativePath)
+    const dirRelativePath = relative(dir, filePath)
+
+    if (dirRelativePath.startsWith('..') || isAbsolute(dirRelativePath)) {
+      return null
+    }
+
+    return filePath
+  } catch {
+    return null
+  }
 }
 
 async function prerender() {
