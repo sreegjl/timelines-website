@@ -799,8 +799,8 @@ function Home({ activeThemeId, onThemeSelect }) {
           <span className="views-eyebrow">Multiple Views</span>
           <h2>More than a timeline.</h2>
           <p className="views-intro">
-            Access the same timeline data through multiple interfaces, with map view available now, spreadsheet
-            view planned next, and additional views to follow.
+            Access the same timeline data through multiple interfaces, with map and spreadsheet views available now
+            and additional views to follow.
           </p>
         </div>
 
