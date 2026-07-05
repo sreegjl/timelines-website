@@ -30,6 +30,7 @@ const sidebar = [
   'Organization',
   'Notes',
   'Searching',
+  'Files',
   'Themes',
   'Exporting',
 ]
