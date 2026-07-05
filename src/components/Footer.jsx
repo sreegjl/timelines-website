@@ -13,7 +13,7 @@ function Footer() {
             <div className="footer-col">
               <h4>Product</h4>
               <Link to="/download">Download</Link>
-              <Link to="/viewer-landing">Viewer (beta)</Link>
+              <Link to="/viewer-landing">Web Viewer</Link>
             </div>
             <div className="footer-col">
               <h4>Resources</h4>
