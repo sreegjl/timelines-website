@@ -6,7 +6,6 @@ import Home from './pages/Home'
 import Download from './pages/Download'
 import Changelog from './pages/Changelog'
 import Gallery from './pages/Gallery'
-import ThemeBuilder from './pages/ThemeBuilder'
 import Wiki from './pages/Wiki'
 import Brand from './pages/Brand'
 import Viewer from './pages/Viewer'
@@ -57,7 +56,6 @@ function App() {
             <Route path="/wiki" element={<Wiki />} />
             <Route path="/wiki/:page" element={<Wiki />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/theme-builder" element={<ThemeBuilder />} />
             <Route path="/brand" element={<Brand />} />
             <Route path="/viewer-landing" element={<Viewer />} />
           </Routes>
