@@ -7,15 +7,15 @@ function Changelog() {
   })
   const releases = [
     {
-      version: '0.6.0-alpha.1',
-      date: 'July 1, 2026',
+      version: '0.6.0-alpha.2',
+      date: 'July 5, 2026',
       changes: [
-        'Spreadsheet view with CSV export',
-        'Advanced filter engine across sidebar, spreadsheet, and search',
-        'Groups can be positioned below the timeline with drag-to-reorder',
-        'Span descriptions displayed directly on timeline elements',
-        'Logarithmic scaling option for timelines',
-        'Marketplace redesign, right panel locking, adjustable event size and font sliders',
+        'Web viewer for .timeline files, including GitHub-hosted share links',
+        'Packaged .timeline exports with linked images and notes included',
+        'Touch pan and pinch-zoom controls',
+        'Spreadsheet sorting, bulk editing, and a richer chip-based filter menu',
+        'Drag-and-drop timeline import, custom install folders, faster marketplace bulk actions',
+        'Fixed rename/save data loss cases and web viewer panel overlap',
       ],
       solid: true,
     },

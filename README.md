@@ -1,0 +1,1 @@
+![Banner](docs/banner-light.png)

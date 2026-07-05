@@ -9,7 +9,7 @@ function Download() {
   return (
     <div className="page download">
 
-      <span className="download-version-badge">Free &amp; Open-Source &middot; Alpha v0.6.0-alpha.1</span>
+      <span className="download-version-badge">Free &amp; Open-Source &middot; v0.6.0-alpha.2</span>
       <h1 className="download-title">Download <em>Timelines.</em></h1>
       <p className="download-subtitle">Local-first and free forever. Pick your platform.</p>
 
@@ -26,7 +26,7 @@ function Download() {
           </div>
           <h3>Windows</h3>
           <p className="download-card-req">Windows 10 &amp; 11</p>
-          <a href="https://github.com/sreegjl/timelines/releases/download/v0.6.0-alpha.1/Timelines-0.6.0-alpha.1-Setup.exe" className="btn btn-primary download-btn">
+          <a href="https://github.com/sreegjl/timelines/releases/download/v0.6.0-alpha.2/Timelines-0.6.0-alpha.2-Setup.exe" className="btn btn-primary download-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
@@ -44,7 +44,7 @@ function Download() {
           </div>
           <h3>macOS</h3>
           <p className="download-card-req">macOS 12 Monterey or later</p>
-          <a href="https://github.com/sreegjl/timelines/releases/download/v0.6.0-alpha.1/Timelines-0.6.0-alpha.1-Setup.dmg" className="btn btn-primary download-btn">
+          <a href="https://github.com/sreegjl/timelines/releases/download/v0.6.0-alpha.2/Timelines-0.6.0-alpha.2-Setup.dmg" className="btn btn-primary download-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
@@ -57,8 +57,8 @@ function Download() {
       </div>
 
       <div className="download-footer-info">
-        <span>Version <strong>0.6.0-alpha.1</strong></span>
-        <span>Released <strong>Jul 2026</strong></span>
+        <span>Version <strong>0.6.0-alpha.2</strong></span>
+        <span>Released <strong>Jul 5, 2026</strong></span>
         <span>License <strong>GPL-3.0</strong></span>
         <span>Local-first &middot; <strong>offline</strong></span>
       </div>
