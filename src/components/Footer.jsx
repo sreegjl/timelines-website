@@ -27,7 +27,7 @@ function Footer() {
               <a href="https://github.com/sreegjl/timelines" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a href="https://github.com/sreegjl/timelines/issues" target="_blank" rel="noopener noreferrer">Report a Bug</a>
               <a href="https://ko-fi.com/sreegjl" target="_blank" rel="noopener noreferrer">Donate</a>
-              <a href="mailto:support@timelines.studio">Contact</a>
+              <a href="mailto:sreegjl@gmail.com">Contact</a>
             </div>
           </div>
         </div>
