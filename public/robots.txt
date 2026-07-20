@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /arcade-timelines/
 
 Sitemap: https://timelines.studio/sitemap.xml
