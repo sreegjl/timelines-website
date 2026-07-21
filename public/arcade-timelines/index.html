@@ -76,12 +76,19 @@
         <span class="timeline-placeholder__text">This link does not end in <code>.timeline</code>.</span>
       </div>
       <button class="maximize-btn" id="maximize-btn" title="Open timeline in fullscreen" aria-label="Open timeline in fullscreen">
-        <!-- Lucide "maximize" icon (inlined; uses currentColor). -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <!-- Lucide "maximize" icon (inlined; uses currentColor). Shown when not fullscreen. -->
+        <svg id="icon-maximize" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M8 3H5a2 2 0 0 0-2 2v3" />
           <path d="M21 8V5a2 2 0 0 0-2-2h-3" />
           <path d="M3 16v3a2 2 0 0 0 2 2h3" />
           <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+        </svg>
+        <!-- Lucide "minimize" icon (inlined; uses currentColor). Shown while fullscreen. -->
+        <svg id="icon-minimize" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden>
+          <path d="M8 3v3a2 2 0 0 1-2 2H3" />
+          <path d="M21 8h-3a2 2 0 0 1-2-2V3" />
+          <path d="M3 16h3a2 2 0 0 1 2 2v3" />
+          <path d="M16 21v-3a2 2 0 0 1 2-2h3" />
         </svg>
       </button>
     </main>
@@ -130,7 +137,6 @@
        black by script.js, depending on whether red is legible against
        the current theme's background. -->
   <footer class="site-footer">
-    <hr class="site-footer__rule" />
     <p class="site-footer__warning">No copyrighted game ROMs or game materials are hosted on this website!!!</p>
     <p class="site-footer__credit">Game lists &copy; <a href="https://www.mamedev.org/" target="_blank" rel="noopener">MAME</a> - GPL-2.0 License</p>
     <p class="site-footer__credit">Game descriptions &copy; <a href="https://www.arcade-history.com/index.php?page=download" target="_blank" rel="noopener">Gaming History</a>, Alexis Bousiges, Cannes, France</p>

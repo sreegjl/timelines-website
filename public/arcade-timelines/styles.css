@@ -535,12 +535,6 @@ body {
   flex-shrink: 0;
 }
 
-.site-footer__rule {
-  border: none;
-  border-top: 2px solid var(--border-color);
-  margin: 0 0 16px;
-}
-
 .site-footer__warning {
   color: var(--footer-warning-color);
   font-size: 9px;

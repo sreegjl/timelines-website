@@ -18,6 +18,8 @@ const timelineWrap = document.getElementById("timeline-wrap");
 const frame = document.getElementById("timeline-frame");
 const placeholder = document.getElementById("timeline-placeholder");
 const maximizeBtn = document.getElementById("maximize-btn");
+const iconMaximize = document.getElementById("icon-maximize");
+const iconMinimize = document.getElementById("icon-minimize");
 const hofWrap = document.getElementById("hof-wrap");
 const hofList = document.getElementById("hof-list");
 const themeMenu = document.getElementById("theme-menu");
@@ -268,8 +270,25 @@ hofButtons.forEach(button => {
 });
 
 hofToggle.onclick = toggleHallOfFame;
-maximizeBtn.onclick = () => frame.requestFullscreen();
 themeToggle.onclick = toggleThemeMenu;
+
+/* Fullscreen the whole timeline area (not just the iframe), so the
+   maximize button stays on top of it and can flip into an exit button. */
+maximizeBtn.onclick = () => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  } else {
+    timelineWrap.requestFullscreen();
+  }
+};
+
+document.addEventListener("fullscreenchange", () => {
+  const isFullscreen = document.fullscreenElement === timelineWrap;
+  iconMaximize.hidden = isFullscreen;
+  iconMinimize.hidden = !isFullscreen;
+  maximizeBtn.title = isFullscreen ? "Exit fullscreen" : "Open timeline in fullscreen";
+  maximizeBtn.setAttribute("aria-label", maximizeBtn.title);
+});
 
 start().catch(() => alert(
   "Could not load data/manifest.json / data/hall_of_fame.json.\n" +
