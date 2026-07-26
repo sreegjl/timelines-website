@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getThemeById } from '../data/themes'
 import usePageMeta from '../hooks/usePageMeta'
+import { softwareApplication } from '../data/structuredData'
 
 function Home({ activeThemeId, onThemeSelect }) {
-  usePageMeta()
+  usePageMeta({ jsonLd: softwareApplication })
   const [checklist, setChecklist] = useState([true, true, false])
   const toggleCheck = (i) => setChecklist((prev) => prev.map((v, j) => (j === i ? !v : v)))
 

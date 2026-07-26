@@ -22,6 +22,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history so prerender.mjs can read per-file commit dates for sitemap lastmod.
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
