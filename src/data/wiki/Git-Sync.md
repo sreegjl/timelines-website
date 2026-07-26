@@ -55,8 +55,6 @@ The token is stored locally on your computer, encrypted with your operating syst
 
 On the first connect the app clones the repo, packages every timeline in your library, commits them, and pushes. Large libraries can take a minute. When it finishes, the Sync panel switches to its connected view and the status row shows the last sync time.
 
-SSH remotes such as `git@github.com:you/repo.git` are not supported yet. Use the HTTPS URL.
-
 ## Step 4: Connect your other devices
 
 On a second computer, install Timelines and repeat step 3 with the same repository URL and branch. Instead of pushing your library up, the app pulls the repo down and imports every timeline it finds into the local library. From then on both devices sync against the same repo.
