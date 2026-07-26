@@ -14,7 +14,7 @@ The built-in editor supports standard Markdown, plus two additional syntax exten
 Links use standard Markdown syntax and open in your browser when clicked:
 
 ```
-[Timelines Studio](https://www.timelines.studio/)
+[Timelines Studio](https://timelines.studio/)
 ```
 
 If you are new to Markdown, the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) covers the full syntax for headings, lists, tables, and everything else the editor understands.

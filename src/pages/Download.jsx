@@ -1,9 +1,11 @@
 import usePageMeta from '../hooks/usePageMeta'
+import { softwareApplication } from '../data/structuredData'
 
 function Download() {
   usePageMeta({
     title: 'Download',
     description: 'Download Timelines for Windows or macOS. Free, open-source, and local-first.',
+    jsonLd: softwareApplication,
   })
 
   return (

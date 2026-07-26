@@ -2,12 +2,15 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'fs'
 import { resolve, dirname, relative, isAbsolute } from 'path'
 import { fileURLToPath } from 'url'
 import { createServer } from 'http'
+import { execFileSync } from 'child_process'
 import puppeteer from 'puppeteer'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const distDir = resolve(__dirname, '..', 'dist')
+const rootDir = resolve(__dirname, '..')
+const distDir = resolve(rootDir, 'dist')
+const siteUrl = 'https://timelines.studio'
 
-const wikiPages = readdirSync(resolve(__dirname, '..', 'src', 'data', 'wiki'))
+const wikiPages = readdirSync(resolve(rootDir, 'src', 'data', 'wiki'))
   .filter((f) => f.endsWith('.md'))
   .map((f) => f.replace('.md', ''))
 
@@ -21,6 +24,88 @@ const routes = [
   '/wiki',
   ...wikiPages.filter((p) => p !== 'Home').map((p) => `/wiki/${p}`),
 ]
+
+// Sitemap priority per route. Wiki articles fall through to the default.
+const priorities = {
+  '/': '1.0',
+  '/download': '0.9',
+  '/wiki': '0.8',
+  '/gallery': '0.7',
+  '/viewer-landing': '0.7',
+  '/wiki/Installation': '0.7',
+  '/changelog': '0.5',
+  '/brand': '0.4',
+}
+const defaultPriority = '0.6'
+
+// The file whose last commit date represents each route's content.
+const sourceFiles = {
+  '/': 'src/pages/Home.jsx',
+  '/download': 'src/pages/Download.jsx',
+  '/changelog': 'src/pages/Changelog.jsx',
+  '/gallery': 'src/pages/Gallery.jsx',
+  '/brand': 'src/pages/Brand.jsx',
+  '/viewer-landing': 'src/pages/Viewer.jsx',
+  '/wiki': 'src/data/wiki/Home.md',
+}
+
+function sourceFor(route) {
+  if (sourceFiles[route]) return sourceFiles[route]
+  if (route.startsWith('/wiki/')) return `src/data/wiki/${route.slice('/wiki/'.length)}.md`
+  return null
+}
+
+// Last commit date for a file, as YYYY-MM-DD. Returns null when git history is
+// unavailable (shallow clone, no repo), so the caller can fall back.
+function lastCommitDate(file) {
+  if (!file) return null
+  try {
+    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', file], {
+      cwd: rootDir,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim()
+    return /^\d{4}-\d{2}-\d{2}$/.test(out) ? out : null
+  } catch {
+    return null
+  }
+}
+
+function writeSitemap() {
+  const fallback = new Date().toISOString().slice(0, 10)
+  let missingHistory = 0
+
+  const entries = routes.map((route) => {
+    const lastmod = lastCommitDate(sourceFor(route))
+    if (!lastmod) missingHistory++
+    const loc = `${siteUrl}${route === '/' ? '/' : route}`
+    return [
+      '  <url>',
+      `    <loc>${loc}</loc>`,
+      `    <lastmod>${lastmod || fallback}</lastmod>`,
+      `    <priority>${priorities[route] || defaultPriority}</priority>`,
+      '  </url>',
+    ].join('\n')
+  })
+
+  const xml = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...entries,
+    '</urlset>',
+    '',
+  ].join('\n')
+
+  writeFileSync(resolve(distDir, 'sitemap.xml'), xml)
+
+  if (missingHistory > 0) {
+    console.warn(
+      `Sitemap: no git history for ${missingHistory}/${routes.length} routes, used build date. ` +
+        'Set fetch-depth: 0 on actions/checkout for accurate lastmod.'
+    )
+  }
+  console.log(`Wrote sitemap.xml with ${routes.length} urls`)
+}
 
 const mimeTypes = {
   '.html': 'text/html',
@@ -105,6 +190,8 @@ async function prerender() {
   await browser.close()
   server.close()
   console.log(`Prerendered ${routes.length} routes`)
+
+  writeSitemap()
 }
 
 prerender().catch((err) => {

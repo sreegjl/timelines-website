@@ -36,7 +36,7 @@ The JSON export downloads the raw timeline data for the current timeline. This i
 A packaged file is meant for sharing and importing, and works everywhere a regular `.timeline` file does:
 
 - **Send it to another person.** They can use **Import** on the home screen. Importing unpacks the timeline into their library and copies its images and notes into their own folders, so everything shows up just like it does for you and stays fully editable.
-- **Open it in the web viewer.** Drop the file on [the viewer](https://www.timelines.studio/viewer/) and thumbnails and notes appear right in the browser. Nothing is uploaded; the file is read locally.
+- **Open it in the web viewer.** Drop the file on [the viewer](https://timelines.studio/viewer/) and thumbnails and notes appear right in the browser. Nothing is uploaded; the file is read locally.
 - **Publish it on GitHub.** Viewer links to a packaged file show the timeline complete with images and notes.
 
 If you import a packaged timeline that is already in your library, Timelines asks whether you want to open your existing copy or import the file as a separate copy.

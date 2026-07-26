@@ -6,7 +6,7 @@ What you get once a repo is connected:
 
 - **Cross-device sync** - the same library on every computer you connect
 - **Version history** - each sync is a commit, and any past version can be restored
-- **Shareable viewer links** - if the repo is public, every synced timeline has a link that opens in the [web viewer](https://www.timelines.studio/viewer/)
+- **Shareable viewer links** - if the repo is public, every synced timeline has a link that opens in the [web viewer](https://timelines.studio/viewer/)
 
 Timelines never uploads anything to a server run by us. Your data goes only to the repository you point it at, using credentials you create.
 
