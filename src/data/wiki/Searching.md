@@ -39,7 +39,7 @@ Shows elements that have the given tag. The `#` must be directly followed by the
 >= 1776-07-04
 ```
 
-Compares against the element's date (events) or start date (spans and eras). Negative numbers represent BCE years. Full dates use `YYYY-MM-DD` format.
+Compares against the element's date (events) or start date (spans and eras). Negative numbers represent years before year 0, whatever era label the timeline displays them with. Full dates use `YYYY-MM-DD` format here regardless of the timeline's [[Dates|date format]].
 
 | Operator | Meaning |
 |----------|---------|

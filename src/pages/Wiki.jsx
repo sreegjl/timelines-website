@@ -12,9 +12,13 @@ const pages = Object.entries(
 
 const slugSet = new Set(pages.map((p) => p.slug))
 
+const slugLabel = (slug) => slug.replace(/-/g, ' ')
+
 function resolveWikiLinks(content) {
-  return content.replace(/\[\[([^\]]+)\]\]/g, (_, slug) => {
-    const label = slug.replace(/-/g, ' ')
+  return content.replace(/\[\[([^\]]+)\]\]/g, (_, target) => {
+    const [rawSlug, alias] = target.split('|')
+    const slug = rawSlug.trim()
+    const label = (alias ?? slug).trim().replace(/-/g, ' ')
     if (slugSet.has(slug)) {
       return `[${label}](/wiki/${slug})`
     }
@@ -27,10 +31,12 @@ const sidebar = [
   'Installation',
   'Interface',
   'Elements',
+  'Dates',
   'Organization',
   'Notes',
   'Searching',
   'Files',
+  'Git-Sync',
   'Themes',
   'Exporting',
 ]
@@ -42,8 +48,8 @@ function Wiki() {
   const activePage = pages.find((p) => p.slug === activeSlug)
 
   usePageMeta({
-    title: activeSlug === 'Home' ? 'Wiki' : activeSlug,
-    description: `Timelines wiki — ${activeSlug.replace(/-/g, ' ')}`,
+    title: activeSlug === 'Home' ? 'Wiki' : slugLabel(activeSlug),
+    description: `Timelines wiki — ${slugLabel(activeSlug)}`,
   })
 
   return (
@@ -57,7 +63,7 @@ function Wiki() {
                 to={name === 'Home' ? '/wiki' : `/wiki/${name}`}
                 className={`wiki-sidebar-link${activeSlug === name ? ' active' : ''}`}
               >
-                {name}
+                {slugLabel(name)}
               </Link>
             ))}
           </nav>
@@ -68,7 +74,7 @@ function Wiki() {
             onChange={(e) => navigate(e.target.value === 'Home' ? '/wiki' : `/wiki/${e.target.value}`)}
           >
             {sidebar.map((name) => (
-              <option key={name} value={name}>{name}</option>
+              <option key={name} value={name}>{slugLabel(name)}</option>
             ))}
           </select>
         </div>

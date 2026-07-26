@@ -11,6 +11,14 @@ The built-in editor supports standard Markdown, plus two additional syntax exten
 - `__underline__`
 - `==highlight==`
 
+Links use standard Markdown syntax and open in your browser when clicked:
+
+```
+[Timelines Studio](https://www.timelines.studio/)
+```
+
+If you are new to Markdown, the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) covers the full syntax for headings, lists, tables, and everything else the editor understands.
+
 A formatting toolbar above the editor provides shortcuts for the most common styles. Notes auto-save when you click away.
 
 ### HTML Support

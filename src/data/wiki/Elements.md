@@ -2,6 +2,8 @@
 
 Timelines are built from three element types: events, spans, and eras. Each is created from the New menu in the sidebar or by right-clicking on the canvas. Elements can be organized further using [[Organization|tags and groups]].
 
+Date fields accept years, calendar dates, and dynamic keywords that track the present. See [[Dates]] for the formats and how to write them.
+
 ## Events
 
 An event marks a single point in time. It appears as a labeled marker on the canvas at its date.
