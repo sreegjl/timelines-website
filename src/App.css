@@ -188,6 +188,12 @@ main:has(.home) {
   clip-path: inset(0 0 0 0);
 }
 
+/* Same heart fill-up on the homepage donate button, which uses .btn sizing
+   rather than the navbar's compact .btn-donate. */
+.btn-donate-cta:hover .btn-donate-heart-fill {
+  clip-path: inset(0 0 0 0);
+}
+
 .btn-donate:hover {
   color: var(--color-text) !important;
   border-color: var(--color-text-muted);
@@ -3168,6 +3174,324 @@ main:has(.home) {
   text-align: left;
 }
 
+/* ── Sync & Publish ── */
+
+.sync-section {
+  padding: 5rem 1.5rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  /* Mockup left, copy right: flips the two splits that precede it. */
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: 3rem;
+  align-items: center;
+}
+
+.sync-copy {
+  text-align: left;
+}
+
+.sync-eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+  font-family: 'Lexend', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.sync-section h2 {
+  font-size: clamp(2.2rem, 4.4vw, 3.7rem);
+  line-height: 1.06;
+  margin: 0 0 1.2rem;
+  text-align: left;
+}
+
+.sync-intro {
+  max-width: 440px;
+  margin: 0 0 2rem;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.sync-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.sync-demo-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 1.25rem;
+  /* Stretch so the result panel matches the menu column's height. That height
+     is constant, so switching states never resizes the card. */
+  align-items: stretch;
+}
+
+/* Library card + menu */
+
+.sync-library {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Slim header row standing in for the library card. The menu below reads as
+   having been opened from its kebab, so no overlap is needed. */
+.sync-library-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0.9rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.sync-library-kebab svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: var(--color-text-muted);
+}
+
+.sync-library-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.sync-library-name {
+  font-family: 'Lexend', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.sync-library-sub {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.sync-menu {
+  /* Sits under the card's kebab rather than on top of the card. */
+  align-self: flex-end;
+  width: min(220px, 100%);
+  margin: 0;
+  padding: 0.35rem;
+  list-style: none;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 18px 38px color-mix(in srgb, var(--color-text) 16%, transparent);
+}
+
+.sync-menu-item.has-rule {
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.sync-menu-item button,
+.sync-menu-item > span {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.42rem 0.6rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  font-family: 'Lexend', sans-serif;
+  font-size: 0.86rem;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.sync-menu-item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sync-menu-item.is-dim {
+  opacity: 0.38;
+}
+
+.sync-menu-item.is-interactive button {
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sync-menu-item.is-interactive button:hover {
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+
+.sync-menu-item.is-active button {
+  background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Result panel */
+
+/* Single-cell grid: both panels overlap, so the card's height is the max of
+   the two and is identical in either state at any viewport width. */
+.sync-result {
+  display: grid;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.1rem 1.15rem;
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--color-text) 5%, transparent);
+}
+
+/* Both panels are columns so their CTA pins to the bottom and the two
+   states line up regardless of how much content sits above it. */
+.sync-result-share,
+.sync-result-versions {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* visibility:hidden keeps the box in the layout while removing it from the
+   tab order and the accessibility tree. */
+.sync-result-share.is-inactive,
+.sync-result-versions.is-inactive {
+  visibility: hidden;
+}
+
+.sync-result-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  font-family: 'Lexend', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  transition: gap 0.18s ease;
+}
+
+.sync-result-link:hover {
+  color: var(--color-accent);
+  gap: 0.7rem;
+}
+
+.sync-result-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.9rem;
+  font-family: 'Lexend', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.sync-result-head svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sync-result-url {
+  display: block;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  background: var(--color-inset-bg, var(--color-surface));
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+  word-break: break-all;
+}
+
+.sync-result-note {
+  margin: 0.85rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+/* Timeline name, shown under the panel header like the app does. */
+.sync-version-subject {
+  display: block;
+  margin: -0.55rem 0 0.75rem;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.sync-version-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sync-version-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.sync-version-dot {
+  width: 7px;
+  height: 7px;
+  margin-top: 0.35rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.7;
+}
+
+.sync-version-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.sync-version-title {
+  font-family: 'Lexend', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.sync-version-meta {
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+}
+
+.sync-version-detail {
+  font-size: 0.76rem;
+  color: var(--color-text);
+}
+
+.sync-demo-hint {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
 /* Marketplace cards */
 
 .mp-card {
@@ -3353,20 +3677,20 @@ main:has(.home) {
   color: color-mix(in srgb, var(--color-bg) 60%, transparent);
 }
 
-.open-source-gpl img {
-  height: 40px;
+/* Inline SVG inherits color, so the mark themes itself. No brightness filter
+   is needed for light themes the way the old PNG required. */
+/* Height is tuned so the mark renders the same width as the "100%" stat
+   below it, which keeps both stat descriptions on the same left edge. */
+.open-source-gpl-mark {
+  height: 35px;
   width: auto;
   display: block;
-  opacity: 0.85;
+  color: var(--color-bg);
   transition: opacity 0.2s;
 }
 
-[data-theme-type="light"] .open-source-gpl img {
-  filter: brightness(1.6) saturate(0.8);
-}
-
-.open-source-gpl:hover img {
-  opacity: 1;
+.open-source-gpl:hover .open-source-gpl-mark {
+  opacity: 0.8;
 }
 
 
@@ -3526,11 +3850,6 @@ main:has(.home) {
   text-align: center;
   font-size: clamp(2.6rem, 5.5vw, 3.8rem);
   margin: 0 0 0.75rem;
-}
-
-.download-title em {
-  font-style: italic;
-  color: var(--color-link);
 }
 
 .download-subtitle {
@@ -4404,6 +4723,35 @@ main:has(.home) {
     align-self: center;
   }
 
+  .sync-section {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  /* Copy leads on narrow screens; the mockup follows. */
+  .sync-demo {
+    order: 2;
+  }
+
+  .sync-copy,
+  .sync-section h2 {
+    text-align: center;
+  }
+
+  .sync-intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sync-demo-stage {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .sync-menu {
+    align-self: stretch;
+    width: auto;
+  }
 
   .open-source-inner {
     grid-template-columns: 1fr;

@@ -111,7 +111,7 @@ function Viewer() {
 
   return (
     <div className="page viewer-landing">
-      <h1 className="page-title">Timeline <em>Viewer.</em></h1>
+      <h1 className="page-title">Timeline Viewer.</h1>
       <p className="page-subtitle">
         View a timeline in your browser: nothing is uploaded, files stay on your device.
       </p>

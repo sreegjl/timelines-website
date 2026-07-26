@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { getThemeById } from '../data/themes'
 import usePageMeta from '../hooks/usePageMeta'
 import { softwareApplication } from '../data/structuredData'
+import GplV3Logo from '../components/GplV3Logo'
 
 function Home({ activeThemeId, onThemeSelect }) {
   usePageMeta({ jsonLd: softwareApplication })
@@ -112,29 +113,36 @@ function Home({ activeThemeId, onThemeSelect }) {
                 </div>
                 <div className="hero-sidebar-scroll">
                 <div className="hero-sidebar-group">
-                  <div className="hero-sidebar-group-head" style={{ color: '#a08850' }}>
+                  <div className="hero-sidebar-group-head" style={{ color: '#a86d4f' }}>
                     <svg className="hero-sidebar-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
-                    <span className="hero-sidebar-group-name">Classical</span>
-                    <span className="hero-sidebar-group-count">8</span>
+                    <span className="hero-sidebar-group-name">Archaic</span>
+                    <span className="hero-sidebar-group-count">9</span>
                   </div>
                   <div className="hero-sidebar-item"><span className="sidebar-dot" style={{ background: '#7898b7' }}></span><span className="sidebar-item-name">Athens</span><span className="sidebar-item-year">1068–146 BCE</span></div>
                   <div className="hero-sidebar-item"><span className="sidebar-dot" style={{ background: '#d28f51' }}></span><span className="sidebar-item-name">Corinth</span><span className="sidebar-item-year">900–146 BCE</span></div>
                   <div className="hero-sidebar-item"><span className="sidebar-dot" style={{ background: '#ac6969' }}></span><span className="sidebar-item-name">Sparta</span><span className="sidebar-item-year">900–146 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-dot" style={{ background: '#6d7d97' }}></span><span className="sidebar-item-name">Macedon</span><span className="sidebar-item-year">808–146 BCE</span></div>
                   <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">First Olympic Games</span><span className="sidebar-item-year">776 BCE</span></div>
                   <div className="hero-sidebar-item"><span className="sidebar-indicator" style={{ background: '#8f7ea5' }}></span><span className="sidebar-item-name">Megara</span><span className="sidebar-item-year">745–146 BCE</span></div>
                   <div className="hero-sidebar-item"><span className="sidebar-indicator" style={{ background: '#ac6969' }}></span><span className="sidebar-item-name">Lycurgus&apos; Reforms</span><span className="sidebar-item-year">700 BCE</span></div>
                   <div className="hero-sidebar-item"><span className="sidebar-indicator" style={{ background: '#7898b7' }}></span><span className="sidebar-item-name">Draco&apos;s Legislation</span><span className="sidebar-item-year">621 BCE</span></div>
                   <div className="hero-sidebar-item active"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Battle of Marathon</span><span className="sidebar-item-year">490 BCE</span></div>
+                </div>
+                <div className="hero-sidebar-group">
+                  <div className="hero-sidebar-group-head" style={{ color: '#a08850' }}>
+                    <svg className="hero-sidebar-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+                    <span className="hero-sidebar-group-name">Classical</span>
+                    <span className="hero-sidebar-group-count">2</span>
+                  </div>
                   <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Peloponnesian War</span><span className="sidebar-item-year">431 BCE</span></div>
+                  <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Alexander&apos;s Campaign</span><span className="sidebar-item-year">334 BCE</span></div>
                 </div>
                 <div className="hero-sidebar-group">
                   <div className="hero-sidebar-group-head" style={{ color: '#8f7260' }}>
                     <svg className="hero-sidebar-group-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                     <span className="hero-sidebar-group-name">Hellenistic</span>
-                    <span className="hero-sidebar-group-count">4</span>
+                    <span className="hero-sidebar-group-count">2</span>
                   </div>
-                  <div className="hero-sidebar-item"><span className="sidebar-dot" style={{ background: '#6d7d97' }}></span><span className="sidebar-item-name">Macedon</span><span className="sidebar-item-year">808–146 BCE</span></div>
-                  <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Alexander&apos;s Campaign</span><span className="sidebar-item-year">334 BCE</span></div>
                   <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Death of Alexander</span><span className="sidebar-item-year">323 BCE</span></div>
                   <div className="hero-sidebar-item"><span className="sidebar-indicator"></span><span className="sidebar-item-name">Fall of Corinth</span><span className="sidebar-item-year">146 BCE</span></div>
                 </div>
@@ -918,29 +926,47 @@ function Home({ activeThemeId, onThemeSelect }) {
       </section>
 
 
+      {/* ── Sync & Publish ── */}
+      <section className="sync-section scroll-reveal" id="sync">
+        <SyncPublishDemo />
+        <div className="sync-copy">
+          <span className="sync-eyebrow">Sync and Publish</span>
+          <h2>Sync freely.</h2>
+          <p className="sync-intro">
+            Connect your library to a GitHub repo you own. Every device stays in step, every sync is a
+            {' '}version you can restore, and any timeline in a public repo gets a link that opens in the
+            {' '}browser with its images and notes intact.
+          </p>
+        </div>
+      </section>
+
       {/* ── Open Source ── */}
       <section className="open-source">
         <div className="open-source-inner">
           <div className="open-source-text">
             <span className="open-source-label">Open Source, Forever</span>
             <h2>Built in the open.</h2>
-            <p>Timelines is GPL-3.0 licensed and local-first. Timelines are stored as .timeline JSON files and notes as .md files. By default these live in your system app data folder, but you can point to a custom directory in app settings.</p>
+            <p>Timelines is GPL-3.0 licensed and free for everyone: no paid tier, no accounts, no ads. Donations help support ongoing development.</p>
             <div className="open-source-buttons">
-              <a href="https://github.com/sreegjl/timelines" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <a href="https://ko-fi.com/sreegjl" className="btn btn-primary btn-donate-cta" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path className="btn-donate-heart-fill" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.04 3 5.5l7 7Z" />
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.04 3 5.5l7 7Z" />
+                </svg>
+                Donate
+              </a>
+              <a href="https://github.com/sreegjl/timelines" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58 0-.29-.01-1.24-.02-2.25-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.28 0 .32.19.7.8.58A12.01 12.01 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
                 </svg>
                 Star on GitHub
               </a>
-              <Link to="/wiki" className="btn btn-secondary">
-                Read the docs
-              </Link>
             </div>
           </div>
           <div className="open-source-stats">
             <div className="open-source-stat">
               <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener noreferrer" className="open-source-gpl">
-                <img src="/gplv3.png" alt="GPL-3.0 License" />
+                <GplV3Logo className="open-source-gpl-mark" />
               </a>
               <span className="open-source-stat-desc">Free and open-source, always</span>
             </div>
@@ -1039,6 +1065,135 @@ function SpreadsheetDemo() {
           </div>
         </div>
       </div>
+    </div>
+  )
+}
+
+// Mirrors the app's Version History panel: the commit subject carries the
+// machine label, then the source and relative time, then the change summary.
+const versionRows = [
+  { title: 'Update 1 timeline (ryans-macbook)', when: 'Timelines · 2 hours ago', detail: '+3 elements' },
+  { title: 'Update 1 timeline (ryans-desktop)', when: 'Timelines · Yesterday', detail: '+1 element, -1 element' },
+  { title: 'Update 15 timelines (ryans-desktop)', when: 'Timelines · Jul 21', detail: 'added' },
+]
+
+// The library right-click menu is the one place both features sit together, so
+// it doubles as the hub: picking an item swaps the panel beside it.
+function SyncPublishDemo() {
+  const [active, setActive] = useState('versions')
+
+  const menuItems = [
+    { key: 'open', label: 'Open', icon: <><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" /><path d="M14 3v6h6" /></> },
+    { key: 'share', label: 'Share Viewer Link', icon: <><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" /></> },
+    { key: 'versions', label: 'Version History', icon: <><path d="M3 12a9 9 0 1 0 3-6.7L3 8" /><path d="M3 3v5h5" /><path d="M12 7v5l3 2" /></> },
+    { key: 'duplicate', label: 'Duplicate', icon: <><rect x="9" y="9" width="11" height="11" rx="2" /><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" /></> },
+    { key: 'rename', label: 'Rename', icon: <><path d="M12 20h8" /><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" /></> },
+    { key: 'move', label: 'Move to Folder', icon: <><path d="M4 20a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2z" /></> },
+    { key: 'delete', label: 'Delete', icon: <><path d="M3 6h18" /><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" /></> },
+  ]
+
+  const interactive = new Set(['share', 'versions'])
+
+  return (
+    <div className="sync-demo">
+      <div className="sync-demo-stage">
+        <div className="sync-library">
+          <div className="sync-library-card">
+            <div className="sync-library-meta">
+              <span className="sync-library-name">Ancient Greece</span>
+              <span className="sync-library-sub">Edited yesterday</span>
+            </div>
+            <span className="sync-library-kebab" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.4" /><circle cx="12" cy="12" r="1.4" /><circle cx="12" cy="19" r="1.4" /></svg>
+            </span>
+          </div>
+
+          <ul className="sync-menu" role="list">
+            {menuItems.map((item, i) => {
+              const isInteractive = interactive.has(item.key)
+              const classes = [
+                'sync-menu-item',
+                isInteractive ? 'is-interactive' : 'is-dim',
+                active === item.key ? 'is-active' : '',
+                i === 2 || i === 5 ? 'has-rule' : '',
+              ]
+                .filter(Boolean)
+                .join(' ')
+
+              const content = (
+                <>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">{item.icon}</svg>
+                  <span>{item.label}</span>
+                </>
+              )
+
+              return (
+                <li key={item.key} className={classes}>
+                  {isInteractive ? (
+                    <button type="button" onClick={() => setActive(item.key)}>
+                      {content}
+                    </button>
+                  ) : (
+                    <span aria-hidden="true">{content}</span>
+                  )}
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+
+        {/* Both panels stay mounted and share one grid cell, so the card is
+            always as tall as the taller of the two and switching never
+            resizes it. The inactive one is hidden from AT and tab order. */}
+        <div className="sync-result">
+          <div
+            className={`sync-result-share${active === 'share' ? '' : ' is-inactive'}`}
+            aria-hidden={active !== 'share'}
+          >
+              <div className="sync-result-head">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7" /></svg>
+                <span>Link copied</span>
+              </div>
+              <code className="sync-result-url">timelines.studio/viewer/gh/you/timelines/ancient-greece.timeline</code>
+              <p className="sync-result-note">
+                Opens in any browser, images and notes included. No account needed.
+              </p>
+              <Link to="/viewer-landing" className="sync-result-link" tabIndex={active === 'share' ? 0 : -1}>
+                Try the web viewer
+                <span aria-hidden="true">→</span>
+              </Link>
+          </div>
+
+          <div
+            className={`sync-result-versions${active === 'versions' ? '' : ' is-inactive'}`}
+            aria-hidden={active !== 'versions'}
+          >
+              <div className="sync-result-head">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8" /><path d="M3 3v5h5" /></svg>
+                <span>Version History</span>
+              </div>
+              <span className="sync-version-subject">Ancient Greece</span>
+              <ul className="sync-version-list">
+                {versionRows.map((row) => (
+                  <li key={row.title + row.when}>
+                    <span className="sync-version-dot"></span>
+                    <span className="sync-version-copy">
+                      <span className="sync-version-title">{row.title}</span>
+                      <span className="sync-version-meta">{row.when}</span>
+                      <span className="sync-version-detail">{row.detail}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="sync-result-note">Restore any version as a copy. Nothing is overwritten.</p>
+              <Link to="/wiki/Git-Sync" className="sync-result-link" tabIndex={active === 'versions' ? 0 : -1}>
+                How Git Sync works
+                <span aria-hidden="true">→</span>
+              </Link>
+          </div>
+        </div>
+      </div>
+      <span className="sync-demo-hint">Pick an item to see what it does</span>
     </div>
   )
 }

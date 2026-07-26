@@ -8,7 +8,7 @@ function Changelog() {
   const releases = [
     {
       version: '0.7.0-alpha.1',
-      date: 'July 25, 2026',
+      date: 'July 26, 2026',
       changes: [
         'Git sync across devices through your own GitHub repo, with version history and viewer share links',
         'Redesigned homepage and library layout, with timeline thumbnails',
