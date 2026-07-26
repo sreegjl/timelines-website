@@ -931,9 +931,9 @@ function Home({ activeThemeId, onThemeSelect }) {
                 </svg>
                 Star on GitHub
               </a>
-              <a href="https://github.com/sreegjl/timelines/wiki" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              <Link to="/wiki" className="btn btn-secondary">
                 Read the docs
-              </a>
+              </Link>
             </div>
           </div>
           <div className="open-source-stats">

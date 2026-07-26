@@ -7,6 +7,19 @@ function Changelog() {
   })
   const releases = [
     {
+      version: '0.7.0-alpha.1',
+      date: 'July 25, 2026',
+      changes: [
+        'Git sync across devices through your own GitHub repo, with version history and viewer share links',
+        'Redesigned homepage and library layout, with timeline thumbnails',
+        'Dynamic dates that re-resolve to the present, plus an optional today marker',
+        'Selectable date formats (MM/DD/YYYY, DD/MM/YYYY, YYYY-MM-DD)',
+        'Fuzzy era boundaries, group labels on the timeline, unified tag filtering',
+        'Faster large timelines and fixed settings being reverted on save',
+      ],
+      solid: true,
+    },
+    {
       version: '0.6.0-alpha.2',
       date: 'July 5, 2026',
       changes: [
@@ -16,6 +29,19 @@ function Changelog() {
         'Spreadsheet sorting, bulk editing, and a richer chip-based filter menu',
         'Drag-and-drop timeline import, custom install folders, faster marketplace bulk actions',
         'Fixed rename/save data loss cases and web viewer panel overlap',
+      ],
+      solid: false,
+    },
+    {
+      version: '0.6.0-alpha.1',
+      date: 'June 30, 2026',
+      changes: [
+        'Spreadsheet view for editing elements in bulk, with CSV export',
+        'Advanced filter syntax across sidebar, spreadsheet, and Ctrl+F search',
+        'Groups below the timeline line, with drag-to-reorder',
+        'Logarithmic scaling and span descriptions',
+        'Marketplace redesign, adjustable event size and font sliders',
+        'Fixed event spacing, grid line height, and custom asset paths',
       ],
       solid: true,
     },
