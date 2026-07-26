@@ -28,8 +28,17 @@ The app signs in with a token rather than your password.
 
 1. On GitHub, go to **Settings** > **Developer settings** > **Personal access tokens** > **Fine-grained tokens**.
 2. Choose **Generate new token**.
+
+   ![GitHub generate new fine-grained token screen](/wiki/pat-new-token.png)
+
 3. Under **Repository access**, pick **Only select repositories** and select the repo you just created.
+
+   ![GitHub fine-grained token repository access settings](/wiki/pat-repository-access.png)
+
 4. Under **Repository permissions**, set **Contents** to **Read and write**.
+
+   ![GitHub fine-grained token repository permissions settings](/wiki/pat-permissions.png)
+
 5. Generate the token and copy it. GitHub shows it only once.
 
 A classic token with the `repo` scope also works, but a fine-grained token limited to the single repository is safer and is what the app recommends.
