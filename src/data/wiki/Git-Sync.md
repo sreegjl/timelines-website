@@ -43,7 +43,7 @@ The app signs in with a token rather than your password.
 
 A classic token with the `repo` scope also works, but a fine-grained token limited to the single repository is safer and is what the app recommends.
 
-The token is stored locally on your computer, encrypted with your operating system's secure storage when it is available. It is never written into your settings file or into the repository.
+The token is stored locally in the app's user-data folder. When OS encryption is available, it is encrypted using Electron's secure storage API. It is never written to your settings file or Git repository.
 
 ## Step 3: Connect in Timelines
 
