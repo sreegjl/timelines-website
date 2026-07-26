@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "thumbs": "node scripts/gen-thumbs.mjs",
+    "prebuild": "node scripts/gen-thumbs.mjs",
     "build": "vite build",
     "postbuild": "node scripts/prerender.mjs",
     "lint": "eslint .",

@@ -1,0 +1,34 @@
+{
+  "advanced-timeline": {
+    "width": 3430,
+    "height": 1389
+  },
+  "below-line-groups": {
+    "width": 2767,
+    "height": 1389
+  },
+  "branches-merges": {
+    "width": 3430,
+    "height": 1389
+  },
+  "large-timeline": {
+    "width": 2390,
+    "height": 1389
+  },
+  "map-view": {
+    "width": 2562,
+    "height": 1389
+  },
+  "parchment_v2_example": {
+    "width": 2816,
+    "height": 1389
+  },
+  "spreadsheet-view": {
+    "width": 2752,
+    "height": 1389
+  },
+  "timeline-thumbnails": {
+    "width": 2392,
+    "height": 1389
+  }
+}
