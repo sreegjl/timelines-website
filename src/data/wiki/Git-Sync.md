@@ -10,7 +10,7 @@ What you get once a repo is connected:
 
 Timelines never uploads anything to a server run by us. Your data goes only to the repository you point it at, using credentials you create.
 
-## How your timelines are stored
+## What gets stored
 
 Each timeline is written to the repo as a packaged `.timeline` file, the same format described in [[Exporting]]. That means images and notes travel with the timeline, not just the raw data. Folders in your library become folders in the repo.
 
@@ -22,7 +22,7 @@ Choose the visibility deliberately. A **public** repo is required for viewer sha
 
 Note the repository's HTTPS clone URL, which looks like `https://github.com/you/timelines-sync.git`.
 
-## Step 2: Create a personal access token
+## Step 2: Create a token
 
 The app signs in with a token rather than your password.
 
@@ -55,7 +55,7 @@ The token is stored locally in the app's user-data folder. When OS encryption is
 
 On the first connect the app clones the repo, packages every timeline in your library, commits them, and pushes. Large libraries can take a minute. When it finishes, the Sync panel switches to its connected view and the status row shows the last sync time.
 
-## Step 4: Connect your other devices
+## Step 4: Other devices
 
 On a second computer, install Timelines and repeat step 3 with the same repository URL and branch. Instead of pushing your library up, the app pulls the repo down and imports every timeline it finds into the local library. From then on both devices sync against the same repo.
 
@@ -81,7 +81,7 @@ The **Synced Timelines** tree lists your library with a checkbox per timeline an
 
 Unchecking stops future syncs. It does not remove anything already pushed, and it does not remove it from the repository's history.
 
-## Version history and restore
+## Version history
 
 Right-click a timeline in the library and choose **Version History** to see every synced version, newest first, with the date, the device it came from, and a short summary of what changed in that sync.
 
@@ -98,7 +98,7 @@ Both open the timeline in the web viewer with its images and notes intact. If th
 
 For a private repo the dialog explains that viewer links will not work for other people and offers a shortcut to the repo's settings, where you can change visibility.
 
-## When two devices edit the same timeline
+## Conflicts
 
 If the same timeline changed on two devices between syncs, nothing is thrown away. The version already in the repo keeps its place, and your local version is saved beside it as a separate timeline with `-conflict-` and the device name in its filename. It shows a **Conflict** badge in the Synced Timelines tree.
 

@@ -7,7 +7,7 @@ Everything you make in Timelines lives in plain files on your computer. This pag
 - **Timelines** are single `.timeline` files (JSON) in your timelines folder.
 - **Notes** live in a `.notes` folder and **images** in a `.assets` folder, organized per timeline.
 
-All three locations can be changed in app settings, and each has an **Open Folder** button so you can get to your files directly. Folders you create in the library are real folders on disk; see [[Organization]].
+All three locations can be changed in app settings, and each has an **Open Folder** button so you can get to your files directly. Folders you create in the library are real folders on disk inside your timelines folder.
 
 Notes and images are keyed to an internal id that never changes, so renaming a timeline does not move or break its notes and images.
 

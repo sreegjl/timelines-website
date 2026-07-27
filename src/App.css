@@ -4147,6 +4147,9 @@ main:has(.home) {
   gap: 0.15rem;
   border-right: 1px solid var(--color-border);
   padding-right: 1.5rem;
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .wiki-sidebar-link {
@@ -4170,6 +4173,37 @@ main:has(.home) {
   background: var(--color-surface);
 }
 
+/* Indented so the rule lines up under the parent link's label rather than
+   hugging the corner of its active pill. */
+.wiki-sidebar-sections {
+  display: flex;
+  flex-direction: column;
+  margin: 0.3rem 0 0.5rem 0.75rem;
+}
+
+/* Each item carries its own slice of the rule, so the active one can tint it.
+   Nothing here changes the text's metrics: a weight or size change on .active
+   would re-wrap the label and shift every item below it. */
+.wiki-sidebar-section {
+  display: block;
+  padding: 0.3rem 0.4rem 0.3rem 0.6rem;
+  border-left: 2px solid var(--color-border);
+  color: var(--color-text-subtle);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.wiki-sidebar-section:hover {
+  color: var(--color-text);
+}
+
+.wiki-sidebar-section.active {
+  color: var(--color-link);
+  border-left-color: var(--color-link);
+}
+
 .wiki-content {
   min-width: 0;
   line-height: 1.7;
@@ -4186,6 +4220,7 @@ main:has(.home) {
   margin: 2rem 0 0.75rem;
   padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--color-border);
+  scroll-margin-top: 5rem;
 }
 
 .wiki-content h3 {
@@ -4230,6 +4265,50 @@ main:has(.home) {
   padding: 1rem 1.25rem;
   overflow-x: auto;
   margin: 0 0 1rem;
+}
+
+.wiki-code {
+  position: relative;
+  margin: 0 0 1rem;
+}
+
+/* The wrapper owns the spacing. Deliberately no extra right padding here: it
+   shrinks the content box and makes blocks that fit scroll sideways. The
+   button floats over the block's own padding instead. */
+.wiki-content .wiki-code pre {
+  margin: 0;
+}
+
+.wiki-code-copy {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-subtle);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: opacity 0.15s, color 0.15s;
+}
+
+.wiki-code:hover .wiki-code-copy,
+.wiki-code-copy:focus-visible {
+  opacity: 1;
+}
+
+.wiki-code-copy:hover {
+  color: var(--color-text);
+}
+
+.wiki-code-copy.copied {
+  opacity: 1;
+  color: var(--color-link);
+  border-color: var(--color-link);
 }
 
 .wiki-content pre code {

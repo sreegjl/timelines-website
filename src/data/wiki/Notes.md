@@ -19,7 +19,7 @@ Links use standard Markdown syntax and open in your browser when clicked:
 
 If you are new to Markdown, the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) covers the full syntax for headings, lists, tables, and everything else the editor understands.
 
-A formatting toolbar above the editor provides shortcuts for the most common styles. Notes auto-save when you click away.
+A formatting toolbar above the editor provides shortcuts for the most common styles. Notes auto-save a couple of seconds after you stop typing, when you click away, and when you close the app.
 
 ### HTML Support
 

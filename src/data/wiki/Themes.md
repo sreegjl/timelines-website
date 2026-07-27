@@ -16,7 +16,7 @@ A theme file has a `name` field, a `colors` map, and an optional `font` field fo
 {
   "name": "Theme name shown in theme pickers",
   "type": "light | dark, used to pick readable contrast defaults",
-  "collection": "Group name for the theme. 'bundled' ships with the app, but users can set any name to group their own related/variant themes",
+  "collection": "Group name for related themes; 'bundled' ships with the app",
   "author": "Your name or username",
   "font": {
     "family": "Optional font family applied when this theme is active",
@@ -82,4 +82,4 @@ For example, here is the bundled Parchment v2 theme:
 
 The marketplace lets you browse and install themes made by others. Open it by clicking the marketplace icon on the home page. Installed themes are saved to your themes folder and appear alongside built-in themes in the selector.
 
-Themes are sourced from the [timelines-marketplace](https://github.com/sreegjl/timelines-marketplace/) repository. To submit a theme, open a pull request there.
+Themes are sourced from the [timelines-marketplace](https://github.com/sreegjl/timelines-marketplace/) repository. To submit a theme, either open a pull request there or email your theme file to [sreegjl@gmail.com](mailto:sreegjl@gmail.com).
