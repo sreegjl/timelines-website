@@ -7,6 +7,19 @@ function Changelog() {
   })
   const releases = [
     {
+      version: '0.7.0-alpha.2',
+      date: 'August 9, 2026',
+      changes: [
+        'Approximate date markers and calculated duration labels, with customizable prefixes and units',
+        'Span family focus from the context menu, Shift+click, or a long press in the web viewer',
+        'Built-in color picker for elements, tags, groups, and timeline breaks',
+        'Library element counts and expanded sorting, plus faster thumbnails that can be disabled',
+        'Improved tag filtering, export feedback, modal navigation, and new-element focus',
+        'Fixed early dates, group layout, theme loading, and inconsistent date fields',
+      ],
+      solid: false,
+    },
+    {
       version: '0.7.0-alpha.1',
       date: 'July 26, 2026',
       changes: [
