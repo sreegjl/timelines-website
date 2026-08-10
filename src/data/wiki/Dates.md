@@ -22,6 +22,14 @@ A negative year always means a year before year 0, but what gets written on the 
 
 **Positive Era** does the same for years after 0, such as `CE` or `AD`. Both are free text up to 10 characters, and both are labels only. When a negative year carries a label, the minus sign is dropped and the number is shown as a positive value. What gets stored in the file is always the plain signed number, so filters and sorting are unaffected by whatever the labels say.
 
+## Approximate dates
+
+Use an approximate date when a date is an estimate rather than a record. **Approximate Date** in the timeline's general settings controls the marker, such as `c.`, `ca.`, or `circa`; leaving it empty uses `c.`.
+
+In an element's Details section, events have one **Approximate** toggle. Spans and eras have separate **Approximate Start** and **Approximate End** toggles, so a range can display as `c. 1451 - 1506` or `c. 625 - c. 545 BC`. These markers affect only how dates are displayed, not their position, sorting, or filtering.
+
+Era bands do not show dates on the canvas. Use **Fuzzy Start** or **Fuzzy End** in an era's display settings when you also want an uncertain edge to appear visually.
+
 ## Date formats
 
 The **Date Format** setting, in a timeline's advanced settings, controls how month and day dates are shown and typed:
@@ -33,6 +41,14 @@ The **Date Format** setting, in a timeline's advanced settings, controls how mon
 This is a display and input preference, saved per timeline. Dates are always stored inside the `.timeline` file in ISO form (`YYYY-MM-DD`), so a timeline typed in one format still reads correctly for someone using another.
 
 Dash-style ISO input is recognized whichever format is active, so `2026-07-04` always works. Slash input follows the selected order, meaning `07/04/2026` is July 4th on `MM/DD/YYYY` and April 7th on `DD/MM/YYYY`.
+
+## Durations
+
+**Show Durations** in the timeline's appearance settings displays the length of every span and era. Calendar timelines use years, months, and days, such as `3 yrs, 8 mos, 5 days`; year-only timelines show years, such as `1,450 yrs`. Durations update automatically when an element's dates change.
+
+For timelines whose units are not years, set **Duration Unit** in the general settings. A geological timeline can use `Ma`, for example, so a range from `-3.5` to `-1.2` displays as `2.3 Ma`. Leaving it empty uses `yr` or `yrs`.
+
+On the canvas, a span's duration follows its date range and an era's follows its name. Spans and eras also gain a **Duration** row in the right panel. Hiding a span's date with **Hide Date** or **Hide Details** hides its duration too.
 
 ## Dynamic dates
 

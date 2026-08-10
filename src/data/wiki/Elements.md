@@ -11,6 +11,7 @@ An event marks a single point in time. It appears as a labeled marker on the can
 **Properties:**
 - **Name** - the event label
 - **Date** - a single year or calendar date
+- **Approximate** - prefixes the displayed date with a circa marker, see [[Dates]]
 - **Tags** - for filtering and color-coding
 - **Group** - which display group the event belongs to
 - **Parent span** - optionally associate the event with a span that contains it
@@ -27,6 +28,7 @@ An event marks a single point in time. It appears as a labeled marker on the can
   "type": "event",
   "title": "Thera Volcanic Eruption",
   "date": -1627,
+  "approximate": true,
   "parents": ["span-minoan-civilization"],
   "tags": ["volcano"],
   "eventLineStyle": "dotted",
@@ -46,9 +48,12 @@ Spans support three types of relationships with other spans:
 - **Extend** (`extendFrom`) - the span starts exactly where another span ends and is rendered on the same lane, creating a seamless continuation.
 - **Merge** (`mergeParent`) - a visual-only connection showing that this span converges into another at its end point. No lane change occurs.
 
+All three relationships, along with an event's parent span, are what the `family:` filter follows. It isolates a span together with everything descending from it, and Shift-clicking a span on the canvas does the same thing. See [[Searching]].
+
 **Properties:**
 - **Name** - the span label
 - **Start / End** - year or calendar date
+- **Approximate start / end** - prefixes either end of the displayed range with a circa marker, see [[Dates]]
 - **Color** - the span's display color
 - **Size** - thin, normal, or thick
 - **Tags** - for filtering and color-coding
@@ -69,6 +74,8 @@ Spans support three types of relationships with other spans:
   "title": "Minoan Civilization",
   "start": -3000,
   "end": -1450,
+  "approxStart": true,
+  "approxEnd": true,
   "color": "#B8860B",
   "tags": ["culture", "politics"],
   "groupId": "g-main",
@@ -85,6 +92,8 @@ When eras overlap in time, they are stacked automatically. Shorter eras are plac
 **Properties:**
 - **Name** - the era label
 - **Start / End** - year or calendar date
+- **Approximate start / end** - prefixes either end of the displayed range with a circa marker, see [[Dates]]
+- **Fuzzy start / end** - fades out that edge of the band instead of drawing a hard boundary, for an era whose bounds are uncertain
 - **Color** - the era's display color
 - **Size** - normal, thick, or extra thick
 - **Tags** - for filtering and color-coding
