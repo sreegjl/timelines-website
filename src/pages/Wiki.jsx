@@ -73,7 +73,7 @@ function resolveWikiLinks(content) {
 // characters so Google shows it whole instead of rewriting it.
 const descriptions = {
   Home: 'Documentation for Timelines Studio, the free open-source timeline app. Covers installation, the editor, elements, dates, notes, themes, and exporting.',
-  Installation: 'Install Timelines Studio on Windows or macOS from the latest release, or build it from source with Node.js. Early alpha, free and open-source.',
+  Installation: 'Install Timelines Studio on Windows, macOS, or Linux from the latest release, or build it from source with Node.js. Early alpha, free and open-source.',
   Interface: 'A tour of the Timelines Studio editor: the sidebar with timeline, tag, and group tabs, the central canvas, and the right-hand details panel.',
   Elements: 'Events, spans, and eras are the three building blocks of a timeline. Learn what each one does, its properties, and how to create and edit them.',
   Dates: 'How to write dates in Timelines Studio: years, months, full calendar dates, era labels like BCE, circa markers for approximate dates, and dynamic keywords.',

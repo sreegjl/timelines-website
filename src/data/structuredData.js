@@ -15,7 +15,7 @@ export const softwareApplication = {
   '@type': 'SoftwareApplication',
   name: 'Timelines Studio',
   applicationCategory: 'DesignApplication',
-  operatingSystem: 'Windows, macOS',
+  operatingSystem: 'Windows, macOS, Linux',
   offers: {
     '@type': 'Offer',
     price: '0',

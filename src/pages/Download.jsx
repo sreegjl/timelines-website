@@ -4,14 +4,14 @@ import { softwareApplication } from '../data/structuredData'
 function Download() {
   usePageMeta({
     title: 'Download',
-    description: 'Download Timelines for Windows or macOS. Free, open-source, and local-first.',
+    description: 'Download Timelines for Windows, macOS, or Linux. Free, open-source, and local-first.',
     jsonLd: softwareApplication,
   })
 
   return (
     <div className="page download">
 
-      <span className="download-version-badge">Free &amp; Open-Source &middot; v0.7.0-alpha.1</span>
+      <span className="download-version-badge">Free &amp; Open-Source &middot; v0.7.0-alpha.2</span>
       <h1 className="download-title">Download Timelines.</h1>
       <p className="download-subtitle">Local-first and free forever. Pick your platform.</p>
 
@@ -28,13 +28,13 @@ function Download() {
           </div>
           <h3>Windows</h3>
           <p className="download-card-req">Windows 10 &amp; 11</p>
-          <a href="https://github.com/sreegjl/timelines/releases/download/v0.7.0-alpha.1/Timelines-0.7.0-alpha.1-Setup.exe" className="btn btn-primary download-btn">
+          <a href="https://github.com/sreegjl/timelines/releases/download/v0.7.0-alpha.2/Timelines-0.7.0-alpha.2-Setup.exe" className="btn btn-primary download-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Download for Windows
+            Download
           </a>
           <span className="download-meta">.exe &middot; 64-bit</span>
         </div>
@@ -46,21 +46,40 @@ function Download() {
           </div>
           <h3>macOS</h3>
           <p className="download-card-req">macOS 12 Monterey or later</p>
-          <a href="https://github.com/sreegjl/timelines/releases/download/v0.7.0-alpha.1/Timelines-0.7.0-alpha.1-Setup.dmg" className="btn btn-primary download-btn">
+          <a href="https://github.com/sreegjl/timelines/releases/download/v0.7.0-alpha.2/Timelines-0.7.0-alpha.2-Setup.dmg" className="btn btn-primary download-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Download for Mac
+            Download
           </a>
           <span className="download-meta">.dmg &middot; Universal</span>
+        </div>
+        <div className="download-card">
+          <div className="download-card-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polyline points="4 17 10 11 4 5" />
+              <line x1="12" y1="19" x2="20" y2="19" />
+            </svg>
+          </div>
+          <h3>Linux</h3>
+          <p className="download-card-req">64-bit Linux distributions</p>
+          <a href="https://github.com/sreegjl/timelines/releases/download/v0.7.0-alpha.2/Timelines-0.7.0-alpha.2-Setup.AppImage" className="btn btn-primary download-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download
+          </a>
+          <span className="download-meta">.AppImage &middot; 64-bit</span>
         </div>
       </div>
 
       <div className="download-footer-info">
-        <span>Version <strong>0.7.0-alpha.1</strong></span>
-        <span>Released <strong>Jul 26, 2026</strong></span>
+        <span>Version <strong>0.7.0-alpha.2</strong></span>
+        <span>Released <strong>Aug 9, 2026</strong></span>
         <span>License <strong>GPL-3.0</strong></span>
         <span>Local-first &middot; <strong>offline</strong></span>
       </div>
