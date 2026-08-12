@@ -4,7 +4,7 @@ import { softwareApplication } from '../data/structuredData'
 function Download() {
   usePageMeta({
     title: 'Download',
-    description: 'Download Timelines for Windows, macOS, or Linux. Free, open-source, and local-first.',
+    description: 'Download Timelines for Windows, macOS, or GNU / Linux. Free, open-source, and local-first.',
     jsonLd: softwareApplication,
   })
 
@@ -63,8 +63,8 @@ function Download() {
               <line x1="12" y1="19" x2="20" y2="19" />
             </svg>
           </div>
-          <h3>Linux</h3>
-          <p className="download-card-req">64-bit Linux distributions</p>
+          <h3>GNU&nbsp;/&nbsp;Linux</h3>
+          <p className="download-card-req">64-bit distributions</p>
           <a href="https://github.com/sreegjl/timelines/releases/download/v0.7.0-alpha.2/Timelines-0.7.0-alpha.2-Setup.AppImage" className="btn btn-primary download-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
