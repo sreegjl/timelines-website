@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import usePageMeta from '../hooks/usePageMeta'
 import dimensions from '../gallery/thumbs.json'
+import { examples } from '../data/examples'
 
 const fileKey = (path) => path.split('/').pop().replace(/\.[^.]+$/, '')
 
@@ -33,10 +34,19 @@ const images = [...imageMap.values()].map((img) => ({
   ...(dimensions[img.key] || {}),
 }))
 
+// Screenshots of community timelines, kept out of the grid glob above.
+const exampleShots = Object.fromEntries(
+  Object.entries(import.meta.glob('../gallery/examples/*.webp', { eager: true })).map(
+    ([path, mod]) => [fileKey(path), mod.default]
+  )
+)
+
+const hostLabel = (url) => new URL(url).hostname.replace(/^www\./, '')
+
 function Gallery() {
   usePageMeta({
     title: 'Gallery',
-    description: 'Screenshots and visuals from Timelines.',
+    description: 'Screenshots and visuals from Timelines, plus timelines published by the community.',
   })
 
   const [selectedIndex, setSelectedIndex] = useState(null)
@@ -95,6 +105,45 @@ function Gallery() {
           />
           <button className="gallery-nav gallery-nav-next" onClick={(e) => { e.stopPropagation(); next() }}>&#8250;</button>
         </div>
+      )}
+
+      {examples.length > 0 && (
+        <section className="gallery-examples">
+          <h2 className="gallery-examples-title">Made with Timelines</h2>
+          <p className="gallery-examples-subtitle">
+            Public timelines built by the community and published on the web.
+          </p>
+          <div className="gallery-examples-grid">
+            {examples.map((example) => (
+              <a
+                key={example.url}
+                className="gallery-example"
+                href={example.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {exampleShots[example.image] && (
+                  <img
+                    className="gallery-example-shot"
+                    src={exampleShots[example.image]}
+                    alt={`${example.name} screenshot`}
+                    width="1600"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
+                <div className="gallery-example-body">
+                  <h3>{example.name}</h3>
+                  <p>{example.description}</p>
+                  <span className="gallery-example-link">
+                    {hostLabel(example.url)} <span aria-hidden="true">&rarr;</span>
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
       )}
 
       <div className="survey-callout">
