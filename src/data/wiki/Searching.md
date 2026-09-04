@@ -75,7 +75,7 @@ Shows a span together with everything descending from it: branch children, exten
 
 ## Focusing a Span
 
-Instead of typing `family:` by hand, Shift-click any span on the canvas. Everything outside that span's family disappears and a chip appears in the canvas filter menu, where you can remove it like any other filter. Shift-click the same span again to clear the focus, or Shift-click a different span to move it. Only one span is focused at a time.
+Instead of typing `family:` by hand, Shift-click any span on the canvas. Everything outside that span's family disappears and a chip appears in the canvas filter menu, where you can remove it like any other filter. Shift-click the same span again to clear the focus.
 
 In the editor you can also right-click a span and choose **Focus Span & Children**. On a touch screen in the web viewer, press and hold a span for about half a second instead.
 
