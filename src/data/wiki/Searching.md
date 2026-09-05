@@ -62,7 +62,7 @@ Wrap text in quotes to require an exact substring match.
 has:coords
 ```
 
-Shows only elements that have coordinates set (visible in Map View).
+Shows only elements that have coordinates set (visible in [[Map-View|Map View]]).
 
 **Span families**
 

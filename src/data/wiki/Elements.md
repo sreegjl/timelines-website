@@ -17,7 +17,7 @@ An event marks a single point in time. It appears as a labeled marker on the can
 - **Parent span** - optionally associate the event with a span that contains it
 - **Line style** - solid, dashed, dotted, or none
 - **Border style** - solid, dashed, dotted, or none
-- **Map coordinates** - latitude and longitude, if map view is enabled
+- **Map coordinates** - latitude and longitude, if [[Map-View|map view]] is enabled
 - **Notes** - an attached Markdown file
 - **Wiki** - a linked MediaWiki URL, displayed inline in the right panel (requires wiki integration to be enabled in timeline settings)
 
@@ -62,7 +62,7 @@ All three relationships, along with an event's parent span, are what the `family
 - **Extend from** - ID of the span to continue from
 - **Merge into** - ID of the span to converge with at the end
 - **Visibility** - option to hide the name, date, or both from the canvas
-- **Map coordinates** - latitude and longitude, if map view is enabled
+- **Map coordinates** - latitude and longitude, if [[Map-View|map view]] is enabled
 - **Notes** - an attached Markdown file
 - **Wiki** - a linked MediaWiki URL, displayed inline in the right panel (requires wiki integration to be enabled in timeline settings)
 
@@ -98,6 +98,7 @@ When eras overlap in time, they are stacked automatically. Shorter eras are plac
 - **Size** - normal, thick, or extra thick
 - **Tags** - for filtering and color-coding
 - **Visibility** - option to hide the name, date, or both from the canvas
+- **Map coordinates** - latitude and longitude, if [[Map-View|map view]] is enabled
 - **Notes** - an attached Markdown file
 - **Wiki** - a linked MediaWiki URL, displayed inline in the right panel (requires wiki integration to be enabled in timeline settings)
 

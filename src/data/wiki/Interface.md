@@ -18,7 +18,7 @@ The timeline menu (chevron next to the timeline title) gives access to settings,
 
 The main canvas is where you view and edit your timeline. Right-click an empty area to add an element at that point in time. Click an existing element to select it. Scroll to pan, and use Ctrl + scroll to zoom.
 
-The button bar in the top-right corner contains zoom in/out buttons, a filter menu, and a settings shortcut. If map view is enabled, a toggle to switch between timeline and map view appears here too.
+The button bar in the top-right corner contains zoom in/out buttons, a filter menu, and a settings shortcut. If [[Map-View|map view]] is enabled, a toggle to switch between timeline and map view appears here too.
 
 At the bottom of the canvas is a scrubber that lets you jump to any point in the timeline. It also has a play button that animates through the timeline from start to end.
 
