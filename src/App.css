@@ -3944,6 +3944,123 @@ main:has(.home) {
   color: var(--color-text-muted);
 }
 
+.download-mac-guide {
+  margin: 0 0 2.5rem;
+  padding: 1.5rem 1.75rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-card);
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.download-mac-guide h2 {
+  margin: 0 0 0.6rem;
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.download-mac-guide p {
+  margin: 0 0 0.9rem;
+}
+
+.download-mac-guide ol {
+  margin: 0 0 0.75rem;
+  padding-left: 1.4rem;
+}
+
+.download-mac-guide strong {
+  color: var(--color-text);
+}
+
+.download-mac-guide code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85em;
+}
+
+.download-mac-guide a {
+  color: var(--color-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.download-mac-command {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 0.9rem 1.4rem;
+  padding: 0.6rem 0.6rem 0.6rem 1rem;
+  border: 1.5px dashed var(--color-border);
+  border-radius: 10px;
+  background: var(--color-bg);
+}
+
+.download-mac-command code {
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  color: var(--color-text);
+}
+
+.download-mac-command button {
+  flex-shrink: 0;
+  padding: 0.3rem 0.8rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.download-mac-command button:hover {
+  border-color: var(--color-text-muted);
+}
+
+.download-mac-guide .download-mac-note {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.download-mac-goal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1.5px dashed var(--color-border);
+}
+
+.download-mac-guide .download-mac-goal p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.download-mac-guide .download-mac-goal .btn {
+  flex-shrink: 0;
+  color: var(--color-bg);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .download-mac-goal {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
+
 .download-footer-info {
   display: flex;
   justify-content: center;

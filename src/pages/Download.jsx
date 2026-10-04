@@ -1,7 +1,22 @@
+import { useState } from 'react'
 import usePageMeta from '../hooks/usePageMeta'
 import { softwareApplication } from '../data/structuredData'
 
+const MAC_FIX_COMMAND = 'xattr -cr /Applications/Timelines.app'
+
 function Download() {
+  const [copied, setCopied] = useState(false)
+
+  const copyCommand = async () => {
+    try {
+      await navigator.clipboard.writeText(MAC_FIX_COMMAND)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      // Clipboard unavailable; the command is still selectable on the page
+    }
+  }
+
   usePageMeta({
     title: 'Download',
     description: 'Download Timelines for Windows, macOS, or GNU / Linux. Free, open-source, and local-first.',
@@ -76,6 +91,41 @@ function Download() {
           <span className="download-meta">.AppImage &middot; 64-bit</span>
         </div>
       </div>
+
+      <section className="download-mac-guide" id="macos-install">
+        <h2>macOS: &ldquo;Timelines is damaged and can&rsquo;t be opened&rdquo;</h2>
+        <p>
+          Timelines isn&rsquo;t notarized by Apple yet, so macOS may block it on first launch. The download isn&rsquo;t actually damaged. Until the app is signed and notarized, follow these steps:
+        </p>
+        <ol>
+          <li>Open the <code>.dmg</code> and drag <strong>Timelines</strong> into your <strong>Applications</strong> folder.</li>
+          <li>Open <strong>Terminal</strong> and run:</li>
+        </ol>
+        <div className="download-mac-command">
+          <code>{MAC_FIX_COMMAND}</code>
+          <button type="button" onClick={copyCommand} aria-label="Copy command">
+            {copied ? 'Copied' : 'Copy'}
+          </button>
+        </div>
+        <ol start={3}>
+          <li>Launch Timelines from Applications as usual.</li>
+        </ol>
+        <p className="download-mac-note">
+          This clears the quarantine flag macOS adds to downloaded files. Prefer not to? You can also <a href="https://github.com/sreegjl/timelines" target="_blank" rel="noopener noreferrer">build from source</a>. Track progress on notarization in <a href="https://github.com/sreegjl/timelines/issues/57" target="_blank" rel="noopener noreferrer">issue #57</a>.
+        </p>
+        <div className="download-mac-goal">
+          <p>
+            <strong>Help fix this for good.</strong> Apple charges $99/year for the Developer license needed to sign and notarize the Mac app. Funding it removes this warning and unlocks automatic in-app updates.
+          </p>
+          <a href="https://ko-fi.com/sreegjl/goal?g=30" className="btn btn-primary btn-donate-cta" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path className="btn-donate-heart-fill" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.04 3 5.5l7 7Z" />
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.04 3 5.5l7 7Z" />
+            </svg>
+            Support on Ko-fi
+          </a>
+        </div>
+      </section>
 
       <div className="download-footer-info">
         <span>Version <strong>0.7.0-alpha.2</strong></span>
