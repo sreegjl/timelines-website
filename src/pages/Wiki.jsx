@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import usePageMeta from '../hooks/usePageMeta'
 import { wikiIndexLd, wikiArticleLd } from '../data/structuredData'
+import wikiDates from 'virtual:wiki-dates'
 
 const headingId = (text) =>
   text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
@@ -56,6 +57,16 @@ const NO_HEADINGS = []
 const HEADING_OFFSET = 88
 
 const slugLabel = (slug) => slug.replace(/-/g, ' ')
+
+// Git dates are calendar days, so format in UTC to keep a reader west of
+// Greenwich from seeing the day before.
+const formatDate = (isoDate) =>
+  new Date(isoDate).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC',
+  })
 
 function resolveWikiLinks(content) {
   return content.replace(/\[\[([^\]]+)\]\]/g, (_, target) => {
@@ -223,6 +234,7 @@ function Wiki() {
   const label = slugLabel(activeSlug)
   const pageDescription =
     descriptions[activeSlug] || `Timelines Studio wiki: ${label}.`
+  const dates = wikiDates[activeSlug] ?? {}
 
   usePageMeta({
     title: activeSlug === 'Home' ? 'Wiki' : label,
@@ -230,7 +242,13 @@ function Wiki() {
     jsonLd:
       activeSlug === 'Home'
         ? wikiIndexLd
-        : wikiArticleLd({ slug: activeSlug, label, description: pageDescription }),
+        : wikiArticleLd({
+            slug: activeSlug,
+            label,
+            description: pageDescription,
+            datePublished: dates.published,
+            dateModified: dates.modified,
+          }),
   })
 
   return (
@@ -302,6 +320,11 @@ function Wiki() {
               <p>The page &ldquo;{activeSlug}&rdquo; doesn&apos;t exist yet.</p>
               <Link to="/wiki">Back to Wiki Home</Link>
             </div>
+          )}
+          {activePage && dates.modified && (
+            <p className="wiki-updated">
+              Last updated <time dateTime={dates.modified}>{formatDate(dates.modified)}</time>
+            </p>
           )}
         </article>
       </div>

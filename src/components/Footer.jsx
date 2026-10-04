@@ -30,12 +30,13 @@ function Footer() {
               <h4>Product</h4>
               <Link to="/download">Download</Link>
               <Link to="/viewer-landing">Web Viewer</Link>
+              <Link to="/changelog">Changelog</Link>
             </div>
             <div className="footer-col">
               <h4>Resources</h4>
               <Link to="/gallery">Gallery</Link>
               <Link to="/wiki">Wiki</Link>
-              <Link to="/changelog">Changelog</Link>
+              <Link to="/alternatives">Alternatives</Link>
               <Link to="/brand">Brand</Link>
             </div>
             <div className="footer-col">

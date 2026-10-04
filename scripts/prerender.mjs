@@ -21,6 +21,7 @@ const routes = [
   '/gallery',
   '/brand',
   '/viewer-landing',
+  '/alternatives',
   '/wiki',
   ...wikiPages.filter((p) => p !== 'Home').map((p) => `/wiki/${p}`),
 ]
@@ -32,6 +33,7 @@ const priorities = {
   '/wiki': '0.8',
   '/gallery': '0.7',
   '/viewer-landing': '0.7',
+  '/alternatives': '0.7',
   '/wiki/Installation': '0.7',
   '/changelog': '0.5',
   '/brand': '0.4',
@@ -46,6 +48,7 @@ const sourceFiles = {
   '/gallery': 'src/pages/Gallery.jsx',
   '/brand': 'src/pages/Brand.jsx',
   '/viewer-landing': 'src/pages/Viewer.jsx',
+  '/alternatives': 'src/pages/Alternatives.jsx',
   '/wiki': 'src/data/wiki/Home.md',
 }
 

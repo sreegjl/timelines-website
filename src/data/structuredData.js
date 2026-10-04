@@ -57,7 +57,14 @@ export const wikiIndexLd = [
   ]),
 ]
 
-export function wikiArticleLd({ slug, label, description }) {
+export const alternativesLd = [
+  breadcrumb([
+    { name: 'Home', url: `${siteUrl}/` },
+    { name: 'Alternatives', url: `${siteUrl}/alternatives/` },
+  ]),
+]
+
+export function wikiArticleLd({ slug, label, description, datePublished, dateModified }) {
   const url = `${siteUrl}/wiki/${slug}/`
   return [
     {
@@ -66,6 +73,9 @@ export function wikiArticleLd({ slug, label, description }) {
       headline: label,
       description,
       url,
+      // Omitted when git history is unavailable rather than guessed.
+      ...(datePublished && { datePublished }),
+      ...(dateModified && { dateModified }),
       isPartOf: site,
       inLanguage: 'en',
       author,

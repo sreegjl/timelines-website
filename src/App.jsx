@@ -9,6 +9,7 @@ import Gallery from './pages/Gallery'
 import Wiki from './pages/Wiki'
 import Brand from './pages/Brand'
 import Viewer from './pages/Viewer'
+import Alternatives from './pages/Alternatives'
 import {
   applyThemeToDocument,
   defaultThemeId,
@@ -58,6 +59,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/brand" element={<Brand />} />
             <Route path="/viewer-landing" element={<Viewer />} />
+            <Route path="/alternatives" element={<Alternatives />} />
           </Routes>
         </main>
         <Footer />

@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 import { getThemeById } from '../data/themes'
 import usePageMeta from '../hooks/usePageMeta'
 import { softwareApplication } from '../data/structuredData'
+import { faq, faqLd } from '../data/faq'
 import GplV3Logo from '../components/GplV3Logo'
 
 function Home({ activeThemeId, onThemeSelect }) {
-  usePageMeta({ jsonLd: softwareApplication })
+  usePageMeta({ jsonLd: [softwareApplication, faqLd] })
   const [checklist, setChecklist] = useState([true, true, false])
   const toggleCheck = (i) => setChecklist((prev) => prev.map((v, j) => (j === i ? !v : v)))
 
@@ -941,6 +942,32 @@ function Home({ activeThemeId, onThemeSelect }) {
       </section>
 
       {/* ── Open Source ── */}
+      <section className="faq-section" id="faq">
+        <div className="faq-head">
+          <span className="sync-eyebrow">FAQ</span>
+          <h2>Questions, answered.</h2>
+        </div>
+        <div className="faq-list">
+          {faq.map(({ question, answer, link }) => (
+            <details key={question} className="faq-item">
+              <summary>
+                <h3>{question}</h3>
+                <svg className="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+              </summary>
+              <p>
+                {answer}
+                {link && (
+                  <>
+                    {' '}
+                    <Link to={link.to}>{link.label} <span aria-hidden="true">&rarr;</span></Link>
+                  </>
+                )}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+
       <section className="open-source">
         <div className="open-source-inner">
           <div className="open-source-text">
