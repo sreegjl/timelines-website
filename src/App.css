@@ -3739,6 +3739,61 @@ main:has(.home) {
   max-width: 260px;
 }
 
+.footer-ph-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem 0.5rem 0.6rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-card);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.footer-ph-badge:hover {
+  border-color: var(--color-text-muted);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--color-text) 10%, transparent);
+}
+
+.footer-ph-logo {
+  flex-shrink: 0;
+}
+
+.footer-ph-logo-circle {
+  fill: var(--color-text);
+  transition: fill 0.2s;
+}
+
+.footer-ph-badge:hover .footer-ph-logo-circle {
+  fill: var(--color-accent);
+}
+
+.footer-ph-logo-p {
+  fill: var(--color-card);
+}
+
+.footer-ph-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.footer-ph-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.footer-ph-name {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 .footer-links {
   display: flex;
   gap: 3rem;
