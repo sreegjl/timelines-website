@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://timelines.studio/sitemap.xml
+Sitemap: https://www.timelines.studio/sitemap.xml

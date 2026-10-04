@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 const defaults = {
   title: 'Timelines Studio | Open-Source Timeline App for Worldbuilding',
   description: 'A free, open-source app for creating interactive timelines for worldbuilding and history.',
-  siteUrl: 'https://timelines.studio',
+  siteUrl: 'https://www.timelines.studio',
 }
 
 export default function usePageMeta({ title, description, jsonLd = null } = {}) {
@@ -15,9 +15,11 @@ export default function usePageMeta({ title, description, jsonLd = null } = {}) 
   const jsonLdKey = jsonLd ? JSON.stringify(jsonLd) : ''
 
   useEffect(() => {
-    const fullTitle = title ? `${title} — Timelines Studio` : defaults.title
+    const fullTitle = title ? `${title} | Timelines Studio` : defaults.title
     const desc = description || defaults.description
-    const canonical = `${defaults.siteUrl}${pathname === '/' ? '' : pathname}`
+    // GitHub Pages serves prerendered routes as folder/index.html and redirects
+    // the slashless form, so the canonical always ends in a slash.
+    const canonical = `${defaults.siteUrl}${pathname.replace(/\/+$/, '')}/`
 
     document.title = fullTitle
 
@@ -33,8 +35,8 @@ export default function usePageMeta({ title, description, jsonLd = null } = {}) 
       setMeta('name', 'description', defaults.description)
       setMeta('property', 'og:title', defaults.title)
       setMeta('property', 'og:description', defaults.description)
-      setMeta('property', 'og:url', defaults.siteUrl)
-      setLink('canonical', defaults.siteUrl)
+      setMeta('property', 'og:url', `${defaults.siteUrl}/`)
+      setLink('canonical', `${defaults.siteUrl}/`)
       setJsonLd('')
     }
   }, [title, description, pathname, jsonLdKey])

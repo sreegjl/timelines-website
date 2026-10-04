@@ -8,7 +8,7 @@ import puppeteer from 'puppeteer'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const rootDir = resolve(__dirname, '..')
 const distDir = resolve(rootDir, 'dist')
-const siteUrl = 'https://timelines.studio'
+const siteUrl = 'https://www.timelines.studio'
 
 const wikiPages = readdirSync(resolve(rootDir, 'src', 'data', 'wiki'))
   .filter((f) => f.endsWith('.md'))
@@ -78,7 +78,8 @@ function writeSitemap() {
   const entries = routes.map((route) => {
     const lastmod = lastCommitDate(sourceFor(route))
     if (!lastmod) missingHistory++
-    const loc = `${siteUrl}${route === '/' ? '/' : route}`
+    // Trailing slash matches the URL GitHub Pages serves for folder/index.html.
+    const loc = `${siteUrl}${route === '/' ? '/' : `${route}/`}`
     return [
       '  <url>',
       `    <loc>${loc}</loc>`,

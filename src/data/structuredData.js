@@ -4,11 +4,11 @@
 // (home and download). Wiki pages describe themselves as TechArticle and
 // carry a breadcrumb trail instead.
 
-const siteUrl = 'https://timelines.studio'
+const siteUrl = 'https://www.timelines.studio'
 
 const author = { '@type': 'Person', name: 'sreegjl' }
 
-const site = { '@type': 'WebSite', name: 'Timelines Studio', url: siteUrl }
+const site = { '@type': 'WebSite', name: 'Timelines Studio', url: `${siteUrl}/` }
 
 export const softwareApplication = {
   '@context': 'https://schema.org',
@@ -23,8 +23,8 @@ export const softwareApplication = {
   },
   description:
     'A free, open-source desktop app for creating interactive timelines for worldbuilding and history.',
-  url: siteUrl,
-  downloadUrl: `${siteUrl}/download`,
+  url: `${siteUrl}/`,
+  downloadUrl: `${siteUrl}/download/`,
   license: 'https://opensource.org/licenses/GPL-3.0',
   author,
 }
@@ -44,13 +44,13 @@ function breadcrumb(trail) {
 
 export const wikiIndexLd = [
   breadcrumb([
-    { name: 'Home', url: siteUrl },
-    { name: 'Wiki', url: `${siteUrl}/wiki` },
+    { name: 'Home', url: `${siteUrl}/` },
+    { name: 'Wiki', url: `${siteUrl}/wiki/` },
   ]),
 ]
 
 export function wikiArticleLd({ slug, label, description }) {
-  const url = `${siteUrl}/wiki/${slug}`
+  const url = `${siteUrl}/wiki/${slug}/`
   return [
     {
       '@context': 'https://schema.org',
@@ -63,8 +63,8 @@ export function wikiArticleLd({ slug, label, description }) {
       author,
     },
     breadcrumb([
-      { name: 'Home', url: siteUrl },
-      { name: 'Wiki', url: `${siteUrl}/wiki` },
+      { name: 'Home', url: `${siteUrl}/` },
+      { name: 'Wiki', url: `${siteUrl}/wiki/` },
       { name: label, url },
     ]),
   ]
