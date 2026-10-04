@@ -85,7 +85,7 @@ function Brand() {
         <p>
           The app is called <strong>Timelines</strong>. The full project
           name is <strong>Timelines Studio</strong>, and the website is{' '}
-          <a href="https://timelines.studio">timelines.studio</a>. In logos and wordmarks the
+          <a href="https://www.timelines.studio/">timelines.studio</a>. In logos and wordmarks the
           name appears lowercase, but in writing please capitalize it.
         </p>
       </section>

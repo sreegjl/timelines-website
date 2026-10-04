@@ -25,7 +25,15 @@ export const softwareApplication = {
     'A free, open-source desktop app for creating interactive timelines for worldbuilding and history.',
   url: `${siteUrl}/`,
   downloadUrl: `${siteUrl}/download/`,
+  // Keep in sync with the version shown on the Download page.
+  softwareVersion: '0.7.0-alpha.2',
+  image: `${siteUrl}/opengraph.png`,
+  screenshot: [`${siteUrl}/timeline.webp`, `${siteUrl}/map.webp`],
   license: 'https://opensource.org/licenses/GPL-3.0',
+  sameAs: [
+    'https://github.com/sreegjl/timelines',
+    'https://www.producthunt.com/products/timelines-studio',
+  ],
   author,
 }
 
