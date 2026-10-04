@@ -16,7 +16,7 @@ The timeline menu (chevron next to the timeline title) gives access to settings,
 
 ## Timeline Canvas
 
-The main canvas is where you view and edit your timeline. Right-click an empty area to add an element at that point in time. Click an existing element to select it. Scroll to pan, and use Ctrl + scroll to zoom.
+The main canvas is where you view and edit your timeline. Right-click an empty area to add an element at that point in time. Click an existing element to select it. Scroll to pan, Shift + scroll to pan vertically, and Ctrl + scroll to zoom. Ctrl + Shift + scroll stretches or compresses the timeline horizontally without resizing elements, the same as changing **Detail Level** in timeline settings.
 
 The button bar in the top-right corner contains zoom in/out buttons, a filter menu, and a settings shortcut. If [[Map-View|map view]] is enabled, a toggle to switch between timeline and map view appears here too.
 
