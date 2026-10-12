@@ -331,7 +331,7 @@ function Wiki() {
 
       <div className="survey-callout">
         <p>Help shape the future of Timelines. Takes under 2 minutes.</p>
-        <a href="https://forms.gle/Bbe74yyrZ7zhKeFL8" className="btn btn-primary survey-callout-btn" target="_blank" rel="noopener noreferrer">
+        <a href="https://forms.gle/uaz1rn4JJ6BEfaEw7" className="btn btn-primary survey-callout-btn" target="_blank" rel="noopener noreferrer">
           Take the Survey <span aria-hidden="true">&rarr;</span>
         </a>
       </div>

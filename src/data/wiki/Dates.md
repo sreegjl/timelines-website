@@ -12,6 +12,12 @@ Date fields (an event's **Date**, a span or era's **Start** and **End**) accept 
 
 Precision is remembered, so an element dated to a year is not silently treated as January 1st of that year.
 
+## Time of day
+
+A full calendar date can also carry a time of day. While editing a day-precision date, click the clock icon in the date field and pick a time from the list or type one, such as `3:30 PM` or `15:30`. The time appears next to the date, and clicking it reopens the picker, where **Clear time** removes it.
+
+**Time Format**, in the timeline's advanced settings, controls how times are shown and typed: `1:30 PM` or `13:30`. It defaults to 24-hour when the date format is `YYYY-MM-DD` and 12-hour otherwise.
+
 ## Era labels
 
 A negative year always means a year before year 0, but what gets written on the canvas is up to you. The **Negative Era** and **Positive Era** fields in the timeline's general settings add a label after the number:
@@ -26,9 +32,9 @@ A negative year always means a year before year 0, but what gets written on the 
 
 Use an approximate date when a date is an estimate rather than a record. **Approximate Date** in the timeline's general settings controls the marker, such as `c.`, `ca.`, or `circa`; leaving it empty uses `c.`.
 
-In an element's Details section, events have one **Approximate** toggle. Spans and eras have separate **Approximate Start** and **Approximate End** toggles, so a range can display as `c. 1451 - 1506` or `c. 625 - c. 545 BC`. These markers affect only how dates are displayed, not their position, sorting, or filtering.
+In the right panel's edit mode, hover a date field and click the **≈** button beside it to mark that date approximate. Spans and eras have one on both the start and end dates, so a range can display as `c. 1451 - 1506` or `c. 625 - c. 545 BC`. These markers affect only how dates are displayed, not their position, sorting, or filtering.
 
-Era bands do not show dates on the canvas. Use **Fuzzy Start** or **Fuzzy End** in an era's display settings when you also want an uncertain edge to appear visually.
+Era bands do not show dates on the canvas. Add **Fuzzy Start** or **Fuzzy End** to an era with **+ Add property** when you also want an uncertain edge to appear visually.
 
 ## Date formats
 
@@ -68,7 +74,7 @@ A timeline covers the period you give it, from a few days to billions of years. 
 
 - **Start Point** - the first year or date shown
 - **End Point** - the last year or date shown
-- **Timeline Length** - how much horizontal room that period gets, from `0.2x` to `5x`. Higher values spread elements out and reduce overlap on a crowded timeline.
+- **Timeline Length** - how much horizontal room that period gets, from `0.2x` to `5x`. Higher values spread elements out and reduce overlap on a crowded timeline. You can also adjust it directly on the canvas with Ctrl + Shift + scroll (Cmd + Shift + scroll on Mac).
 
 Start and End accept the same formats as any other date field.
 

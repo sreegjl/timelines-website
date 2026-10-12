@@ -33,6 +33,16 @@ Duplicating a timeline creates a full copy named "Copy", with "Copy 2", "Copy 3"
 
 When deleting a timeline, you choose whether its notes and images are deleted with it or left on disk. Deleting cannot be undone, so leaving notes and images behind is the safer default.
 
+## Importing a spreadsheet
+
+You can turn a spreadsheet into a timeline. Export it as a `.csv` file, then drop it on the home screen or use **Import**. In the import window:
+
+- **Columns** - choose what each column becomes: title, date, end date, description, group, tags, or color. A title and a date are required; anything else can be set to **Don't import**.
+- **Date Order** - how to read dates like `03/04/2024`, as month/day/year or day/month/year. Plain years and `YYYY-MM-DD` dates are always understood.
+- **Preview** - shows how many events and spans will be created, and lists any rows that will be skipped because they have no title or no readable date.
+
+Rows with an end date after their start date become spans; the rest become events. Group names in the file create matching groups, and the timeline's start and end are set around your data.
+
 ## Working with files directly
 
 Because timelines are plain files, you can back them up, sync them, or move them between computers like any other document. A `.timeline` file dropped into your timelines folder appears in the library automatically, and exported packages can be shared and imported on another machine; see [[Exporting]].

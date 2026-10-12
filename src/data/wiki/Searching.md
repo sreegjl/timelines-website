@@ -29,7 +29,15 @@ Shows only elements of that type.
 #roman
 ```
 
-Shows elements that have the given tag. The `#` must be directly followed by the tag name with no space.
+Shows elements that have the given tag. The `#` must be directly followed by the tag name with no space. Wrap tags containing spaces in quotes, such as `#"ancient rome"`.
+
+```
+tag:rom
+```
+
+Shows elements with any tag containing that text, so `tag:rom` matches `roman` and `ancient rome`.
+
+In the filter menu and the sidebar's tag strip, Shift-click a tag to add it to the search query instead of filtering by it directly.
 
 **By date**
 
@@ -73,9 +81,18 @@ family:"Minoan Civilization"
 
 Shows a span together with everything descending from it: branch children, extends, merges, and any events attached to a span in the family. See [[Elements]] for how those relationships are set up.
 
+**Parent span**
+
+```
+parent:span-minoan-civilization
+parent:minoan
+```
+
+Shows only the direct children of a span: events attached to it, and spans that branch from it, extend it, or merge into it. Matches the parent's ID or any part of its name.
+
 ## Focusing a Span
 
-Instead of typing `family:` by hand, Shift-click any span on the canvas. Everything outside that span's family disappears and a chip appears in the canvas filter menu, where you can remove it like any other filter. Shift-click the same span again to clear the focus.
+Instead of typing `family:` by hand, Shift-click any span on the canvas or in the sidebar's Timeline tab. Everything outside that span's family disappears and a chip appears in the canvas filter menu, where you can remove it like any other filter. Shift-click the same span again to clear the focus.
 
 In the editor you can also right-click a span and choose **Focus Span & Children**. On a touch screen in the web viewer, press and hold a span for about half a second instead.
 
@@ -138,4 +155,6 @@ Only events.
 | `(#roman \| #greek) > -500` | Roman or Greek elements after 500 BCE |
 | `family:"minoan civilization"` | That span and everything branching, extending, or merging from it |
 | `family:span-rome is:event` | Only the events inside that span's family |
+| `parent:rome is:event` | Events attached directly to a span named Rome |
+| `tag:war` | Elements with any tag containing "war" |
 | `~family:span-rome` | Everything except that span's family |

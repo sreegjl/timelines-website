@@ -4,12 +4,21 @@ Any element can have one Markdown note and one MediaWiki article attached to it.
 
 ## Markdown Notes
 
-A Markdown note is a `.md` file linked to an element. To add one, select an element, open the right panel, and click **Create Note** to make a new file or **Add Existing Note** to link one you already have.
+A Markdown note is a `.md` file linked to an element. To add one, select an element, switch the right panel to edit mode, and click **Note** below the element's properties. Choose **Create Note** to make a new file or **Add Existing Note** to link one you already have.
 
-The built-in editor supports standard Markdown, plus two additional syntax extensions:
+The editor supports standard Markdown, plus two additional syntax extensions:
 
 - `__underline__`
 - `==highlight==`
+
+### Live and Source modes
+
+The switch at the top of the note toggles between two ways of editing. Your choice is remembered.
+
+- **Live** shows the note formatted as it will render: headings at their size, bold and highlights applied, links underlined, images shown inline, and task lists as clickable checkboxes. The Markdown reappears only where you're editing: inside the bold word or link under the cursor, or on the current line for headings, quotes, and list bullets. **Ctrl/Cmd+click** a link to open it.
+- **Source** shows the plain Markdown with light syntax coloring.
+
+Both modes edit the same file. Live mode only changes how the note looks while you edit; the file always contains exactly the Markdown you typed, so it stays readable in any other Markdown editor.
 
 Links use standard Markdown syntax and open in your browser when clicked:
 
@@ -19,7 +28,11 @@ Links use standard Markdown syntax and open in your browser when clicked:
 
 If you are new to Markdown, the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) covers the full syntax for headings, lists, tables, and everything else the editor understands.
 
-A formatting toolbar above the editor provides shortcuts for the most common styles. Notes auto-save a couple of seconds after you stop typing, when you click away, and when you close the app.
+A formatting toolbar above the editor provides shortcuts for the most common styles. The bold, italic, strikethrough, underline, and highlight buttons toggle: use one on text that already has that style to remove it. Notes auto-save a couple of seconds after you stop typing, when you click away, and when you close the app.
+
+### Wikilinks
+
+`[[Page Name]]` and `[[Page Name|shown text]]` links are highlighted in a muted link color in both the editor and the rendered note. They don't navigate anywhere yet.
 
 ### HTML Support
 
@@ -31,7 +44,7 @@ Tags that can run code or load arbitrary external content (such as `script`, `st
 
 ### Images and Embeds
 
-Use standard Markdown image syntax for all media. The toolbar has an embed button that inserts the syntax with the URL pre-selected.
+Use standard Markdown image syntax for all media. The toolbar has an embed button that inserts the syntax with the URL pre-selected, and a paperclip button that copies an image from your computer into the timeline's images folder and inserts it.
 
 **Images** (any HTTPS URL):
 ```
@@ -64,6 +77,8 @@ Any element can also be linked to a MediaWiki article, such as a Wikipedia page.
 
 Wiki integration must be enabled in the advanced project settings before wiki links can be added.
 
-To add a wiki link, select an element in overview mode and click **Add Wiki**. Paste the article URL and save. In edit mode, the article title and source are shown as a card, with buttons to open it in the browser, edit the URL, or remove it.
+To add a wiki link, select an element, switch to edit mode, and click **Wiki** below the element's properties. Paste the article URL and save. Add `#Section_Name` to the URL to show only that section of the article. In edit mode, the link appears in a **Wiki** box with the article title, its site, and buttons to edit the URL or remove it.
+
+"Part of a series" navigation boxes from Wikipedia collapse into a single line that you can expand, with each of their sections expandable on its own.
 
 

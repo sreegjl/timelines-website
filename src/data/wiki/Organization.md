@@ -11,8 +11,9 @@ For each tag you can:
 - **Spotlight** - highlight only elements with that tag on the canvas
 - **Hide** - remove elements with that tag from the canvas entirely
 - **Use as Label** - show the tag as a label on elements in the timeline canvas
+- **Apply Color to Elements** - copy the tag's color onto every element that has the tag
 
-Tags are created on the fly when added to an element.
+Tags are created on the fly when added to an element. Type several at once separated by commas, such as `war, politics, rome`, to add them all.
 
 ## Groups
 
@@ -23,5 +24,6 @@ From the Groups tab in the sidebar you can:
 - Reorder groups by dragging
 - Toggle a group's visibility to show or hide all its elements at once
 - Enable a color band to visually mark the group's lane on the canvas
+- **Apply Color to Elements** - copy the group's color onto every element in the group
 
 When creating or editing an element, you can assign it to any existing group or create a new one on the fly from the group dropdown.

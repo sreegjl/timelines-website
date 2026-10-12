@@ -16,7 +16,9 @@ The timeline menu (chevron next to the timeline title) gives access to settings,
 
 ## Timeline Canvas
 
-The main canvas is where you view and edit your timeline. Right-click an empty area to add an element at that point in time. Click an existing element to select it. Scroll to pan, Shift + scroll to pan vertically, and Ctrl + scroll to zoom. Ctrl + Shift + scroll stretches or compresses the timeline horizontally without resizing elements, the same as changing **Detail Level** in timeline settings.
+The main canvas is where you view and edit your timeline. Right-click an empty area to add an element at that point in time. Click an existing element to select it. Scroll to pan, Shift + scroll to pan vertically, and Ctrl + scroll to zoom. Ctrl + Shift + scroll (Cmd + Shift + scroll on Mac) stretches or compresses the timeline horizontally without resizing elements, the same as changing **Timeline Length** in timeline settings (see [[Dates]]).
+
+Right-click an event or span to convert it into the other type.
 
 The button bar in the top-right corner contains zoom in/out buttons, a filter menu, and a settings shortcut. If [[Map-View|map view]] is enabled, a toggle to switch between timeline and map view appears here too.
 
@@ -28,6 +30,14 @@ The right panel shows the properties of the selected element. It has two modes t
 
 **Overview mode** - Displays the element's name, date or date range, tags, group, parent spans, and note content. If a MediaWiki article is linked, it renders inline. Clicking a tag spotlights it; clicking a linked span navigates to it.
 
-**Edit mode** - Edit the element's name, date, tags, group, and type-specific properties.
+**Edit mode** - Edit the element's name, date, parent, tags, group, and color. Optional properties such as coordinates, thumbnail, icon, line and border style, and hide date stay out of the way until they have a value. Add one with **+ Add property**, and remove it again with the × that appears when you hover it. Press Enter in a text field to move to the next one.
+
+Below the properties, the **Note**, **Wiki**, and **Sources** buttons attach a note, a wiki article, or sources to the element. See [[Notes]].
+
+While editing an event, drop an image anywhere on the panel to set it as the thumbnail.
 
 The bottom bar has Previous / Next buttons to step through elements, and a Delete button to remove the selected element.
+
+## Language
+
+The interface language can be changed in app settings under **General**, once translations are available. Date and time formats are set per timeline and aren't affected by the language. To help translate Timelines, see the [translation guide](https://github.com/sreegjl/timelines/blob/main/CONTRIBUTING-i18n.md).

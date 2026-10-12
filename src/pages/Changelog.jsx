@@ -7,6 +7,19 @@ function Changelog() {
   })
   const releases = [
     {
+      version: '0.8.0-alpha.1',
+      date: 'October 12, 2026',
+      changes: [
+        'Live preview note editor that shows formatting as you type, with a source mode for plain markdown',
+        'Translation support, CSV import with column mapping, and time of day on dates',
+        'Horizontal timeline scaling, map coordinate picking, and converting events to spans and back',
+        'Compact right panel with optional properties, favorite colors, and comma-separated tags',
+        'Sharper PNG and video exports at exact sizes, with a timeline scale slider and save dialog',
+        'Fixed thumbnails in exports and the color picker not saving pasted hex values',
+      ],
+      solid: true,
+    },
+    {
       version: '0.7.0-alpha.2',
       date: 'August 9, 2026',
       changes: [
@@ -192,7 +205,7 @@ function Changelog() {
 
       <div className="survey-callout">
         <p>Help shape the future of Timelines. Takes under 2 minutes.</p>
-        <a href="https://forms.gle/Bbe74yyrZ7zhKeFL8" className="btn btn-primary survey-callout-btn" target="_blank" rel="noopener noreferrer">
+        <a href="https://forms.gle/uaz1rn4JJ6BEfaEw7" className="btn btn-primary survey-callout-btn" target="_blank" rel="noopener noreferrer">
           Take the Survey <span aria-hidden="true">&rarr;</span>
         </a>
       </div>

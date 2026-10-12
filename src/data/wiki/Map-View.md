@@ -16,7 +16,7 @@ Open the timeline menu (chevron next to the timeline title) and go to **Settings
 
 ## Setting Coordinates
 
-Edit any event, span, or era and enter a latitude and longitude in the **Coordinates** field. Elements without coordinates simply don't appear on the map. Use the `has:coords` filter to see which elements still need coordinates - see [[Searching]].
+Edit any event, span, or era and add **Coordinates** with **+ Add property**. Either type a latitude and longitude, or click the pin button in the field: the canvas switches to the map, and clicking a spot fills in its coordinates. Press Escape or click the pin again to cancel. Elements without coordinates simply don't appear on the map. Use the `has:coords` filter to see which elements still need coordinates - see [[Searching]].
 
 ## Map Settings
 

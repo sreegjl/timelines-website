@@ -4,6 +4,18 @@ Timelines are built from three element types: events, spans, and eras. Each is c
 
 Date fields accept years, calendar dates, and dynamic keywords that track the present. See [[Dates]] for the formats and how to write them.
 
+Elements are edited in the right panel. Common properties are always shown; optional ones such as coordinates, thumbnail, icon, line and border style, and visibility options appear once set, or when added with **+ Add property**. See [[Interface]].
+
+## Colors
+
+The color picker shows your **Favorites**, the current **Theme**'s colors, and colors already used **In this timeline**, so matching colors across elements is a click. Use the star in the picker to add or remove a favorite.
+
+An event uses its parent span's color unless you give it its own; click the revert button in its color field to go back to the inherited color. To color many elements at once, use **Apply Color to Elements** on a tag or group (see [[Organization]]).
+
+## Converting
+
+Right-click an event and choose **Convert to Span** to turn it into a span that starts at its date and runs for one year, month, or day, matching the date's precision, ready for you to set the real end. Right-click a span and choose **Convert to Event** to turn it into an event at its start date; its end date and span relationships are dropped. Both work from the canvas and the sidebar.
+
 ## Events
 
 An event marks a single point in time. It appears as a labeled marker on the canvas at its date.
