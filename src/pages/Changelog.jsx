@@ -17,7 +17,7 @@ function Changelog() {
         'No Year Zero setting, reorganized project settings, and a choice of where timelines are saved',
         'Brazilian Portuguese translation, and fixes for PNG export clipping and Git Sync folder changes',
       ],
-      solid: false,
+      solid: true,
     },
     {
       version: '0.8.0-alpha.1',
