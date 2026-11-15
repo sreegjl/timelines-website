@@ -1,6 +1,6 @@
 # Searching
 
-The search bar in the sidebar (Timeline tab) and the global search overlay (Ctrl+F) both support advanced filter syntax on top of plain text search.
+The search bar in the sidebar (Timeline tab) and the global search overlay (Ctrl+F) both support advanced filter syntax on top of plain text search. The global search also looks inside notes.
 
 ## Plain Text
 
@@ -9,6 +9,12 @@ Typing any word filters elements whose title contains that word (case-insensitiv
 ```
 roman
 ```
+
+## Searching Notes
+
+In the global search (Ctrl+F), plain text also matches the text of each element's Markdown [[Notes|note]]. Matches appear under **In notes**, with a snippet around the first match and the number of hits in that note. Formatting is ignored, so a search for `iron age` finds `**Iron** Age` too.
+
+Note search only runs for plain text. Once a query uses filter syntax, use `contains:` to filter by note text instead.
 
 ## Filter Syntax
 
@@ -63,6 +69,15 @@ Wrap text in quotes to require an exact substring match.
 ```
 "iron age"
 ```
+
+**Note text**
+
+```
+contains:volcano
+contains:"bronze age"
+```
+
+Shows elements whose note contains that text. Unlike plain search, this works alongside other filters, such as `is:event contains:volcano`.
 
 **Geographic data**
 
@@ -157,4 +172,5 @@ Only events.
 | `family:span-rome is:event` | Only the events inside that span's family |
 | `parent:rome is:event` | Events attached directly to a span named Rome |
 | `tag:war` | Elements with any tag containing "war" |
+| `#roman contains:senate` | Roman elements whose note mentions the senate |
 | `~family:span-rome` | Everything except that span's family |

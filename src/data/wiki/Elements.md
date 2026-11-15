@@ -4,13 +4,23 @@ Timelines are built from three element types: events, spans, and eras. Each is c
 
 Date fields accept years, calendar dates, and dynamic keywords that track the present. See [[Dates]] for the formats and how to write them.
 
-Elements are edited in the right panel. Common properties are always shown; optional ones such as coordinates, thumbnail, icon, line and border style, and visibility options appear once set, or when added with **+ Add property**. See [[Interface]].
+Elements are edited in the right panel. Common properties are always shown; optional ones such as coordinates, thumbnail, icon, font size, connections, line and border style, and visibility options appear once set, or when added with **+ Add property**. See [[Interface]].
 
 ## Colors
 
 The color picker shows your **Favorites**, the current **Theme**'s colors, and colors already used **In this timeline**, so matching colors across elements is a click. Use the star in the picker to add or remove a favorite.
 
 An event uses its parent span's color unless you give it its own; click the revert button in its color field to go back to the inherited color. To color many elements at once, use **Apply Color to Elements** on a tag or group (see [[Organization]]).
+
+## Font size
+
+Add **Font Size** to an event or span with **+ Add property** to give its label a custom size in pixels, from 6 to 32. Use the stepper buttons or type a number. Elements without one use the timeline's **Event Font Size** from the appearance settings. An event's card grows to fit larger text, while a span's text is capped by its size so it stays inside its lane.
+
+## Connections
+
+Connections link an element to another timeline, or to a specific element in it. Add **Connections** with **+ Add property**, pick a timeline (or **This timeline**), then pick an element or leave it on **Whole timeline**. An element can have several connections.
+
+In overview mode, click a connection to jump to it. A **Back** button then takes you back to where you followed the link from. If a linked timeline is no longer in your library, the connection is marked as missing. In the web viewer, connections to other timelines are hidden.
 
 ## Converting
 
@@ -29,6 +39,8 @@ An event marks a single point in time. It appears as a labeled marker on the can
 - **Parent span** - optionally associate the event with a span that contains it
 - **Line style** - solid, dashed, dotted, or none
 - **Border style** - solid, dashed, dotted, or none
+- **Font size** - a custom label size in pixels
+- **Connections** - links to other timelines or elements
 - **Map coordinates** - latitude and longitude, if [[Map-View|map view]] is enabled
 - **Notes** - an attached Markdown file
 - **Wiki** - a linked MediaWiki URL, displayed inline in the right panel (requires wiki integration to be enabled in timeline settings)
@@ -45,6 +57,7 @@ An event marks a single point in time. It appears as a labeled marker on the can
   "tags": ["volcano"],
   "eventLineStyle": "dotted",
   "eventBorderStyle": "dotted",
+  "fontSize": 14,
   "groupId": "g-main",
   "noteFile": "thera-eruption.md"
 }
@@ -74,6 +87,8 @@ All three relationships, along with an event's parent span, are what the `family
 - **Extend from** - ID of the span to continue from
 - **Merge into** - ID of the span to converge with at the end
 - **Visibility** - option to hide the name, date, or both from the canvas
+- **Font size** - a custom label size in pixels, capped by the span's size
+- **Connections** - links to other timelines or elements
 - **Map coordinates** - latitude and longitude, if [[Map-View|map view]] is enabled
 - **Notes** - an attached Markdown file
 - **Wiki** - a linked MediaWiki URL, displayed inline in the right panel (requires wiki integration to be enabled in timeline settings)
@@ -110,6 +125,7 @@ When eras overlap in time, they are stacked automatically. Shorter eras are plac
 - **Size** - normal, thick, or extra thick
 - **Tags** - for filtering and color-coding
 - **Visibility** - option to hide the name, date, or both from the canvas
+- **Connections** - links to other timelines or elements
 - **Map coordinates** - latitude and longitude, if [[Map-View|map view]] is enabled
 - **Notes** - an attached Markdown file
 - **Wiki** - a linked MediaWiki URL, displayed inline in the right panel (requires wiki integration to be enabled in timeline settings)

@@ -67,9 +67,13 @@ Use standard Markdown image syntax for all media. The toolbar has an embed butto
 ![](https://example.com/video.mp4)
 ```
 
+To rename a note's file, click the pencil next to the note's file name in the right panel, type the new name, and save. The element stays linked to the renamed file. A name already used by another note, or one that can't be a file name, is refused and nothing changes.
+
 To remove a note from an element without deleting the file, use **Unlink**. To permanently delete the file, use **Delete**.
 
 Note files are stored in the notes directory set in app settings. By default this is a subfolder inside your system app data folder, but you can point it to any directory.
+
+The global search (Ctrl+F) looks inside notes, and the `contains:` filter matches note text. See [[Searching]].
 
 ## MediaWiki
 

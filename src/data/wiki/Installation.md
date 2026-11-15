@@ -36,4 +36,4 @@ npm run electron:dev
 
 ## Data Storage
 
-Timelines are stored as `.timeline` JSON files and notes as `.md` files. By default these are saved to your system app data folder. You can point to a custom directory in app settings.
+Timelines are stored as `.timeline` JSON files and notes as `.md` files. On first launch, the app asks whether to use its default folder, inside your system app data folder, or one you choose. You can change it later in app settings, see [[Files]].

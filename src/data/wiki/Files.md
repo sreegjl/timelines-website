@@ -7,9 +7,20 @@ Everything you make in Timelines lives in plain files on your computer. This pag
 - **Timelines** are single `.timeline` files (JSON) in your timelines folder.
 - **Notes** live in a `.notes` folder and **images** in a `.assets` folder, organized per timeline.
 
-All three locations can be changed in app settings, and each has an **Open Folder** button so you can get to your files directly. Folders you create in the library are real folders on disk inside your timelines folder.
+The first time you open Timelines, it asks where to keep your timelines: **Use Default** keeps them in the app's data folder, or **Choose...** picks a folder of your own, such as one in Documents or one you already back up.
+
+All three locations can be changed later in app settings under **Files**, and each has an **Open Folder** button so you can get to your files directly. Folders you create in the library are real folders on disk inside your timelines folder.
 
 Notes and images are keyed to an internal id that never changes, so renaming a timeline does not move or break its notes and images.
+
+## Changing the timelines folder
+
+When you pick a new timelines folder in app settings, Timelines offers to move your existing timelines, with their notes and images, into it:
+
+- **Move Timelines** - moves everything to the new folder. If a file with the same name already exists there, it's left in the old folder and listed when the move finishes. Nothing in the new folder is overwritten.
+- **Switch Without Moving** - uses the new folder as it is. Your timelines stay in the old folder and won't appear in the library until you switch back.
+
+Moving isn't offered when one folder is inside the other. If the new folder looks like it's synced by another service, such as Dropbox or iCloud, and you use [[Git-Sync|Git Sync]], the app warns you, since using both can create conflicting or duplicate timelines.
 
 ## Saving
 

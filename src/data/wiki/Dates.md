@@ -1,6 +1,6 @@
 # Dates
 
-Every date in Timelines is one of three things: a year, a calendar date, or a dynamic keyword that resolves to the present. This page covers how to write them, how they are displayed, and the settings that control the timeline's own span of time.
+Every date in Timelines is one of three things: a year, a calendar date, or a dynamic keyword that resolves to the present. This page covers how to write them, how they are displayed, and the settings that control the timeline's own span of time. Most date settings are in the **Dates** section of the timeline's settings.
 
 ## Writing dates
 
@@ -12,15 +12,17 @@ Date fields (an event's **Date**, a span or era's **Start** and **End**) accept 
 
 Precision is remembered, so an element dated to a year is not silently treated as January 1st of that year.
 
+Month and day dates need **Calendar View** turned on in the **Views** part of the timeline's advanced settings. It also adds the Calendar view, see [[Views]].
+
 ## Time of day
 
 A full calendar date can also carry a time of day. While editing a day-precision date, click the clock icon in the date field and pick a time from the list or type one, such as `3:30 PM` or `15:30`. The time appears next to the date, and clicking it reopens the picker, where **Clear time** removes it.
 
-**Time Format**, in the timeline's advanced settings, controls how times are shown and typed: `1:30 PM` or `13:30`. It defaults to 24-hour when the date format is `YYYY-MM-DD` and 12-hour otherwise.
+**Time Format**, in the timeline's date settings, controls how times are shown and typed: `1:30 PM` or `13:30`. It defaults to 24-hour when the date format is `YYYY-MM-DD` and 12-hour otherwise.
 
 ## Era labels
 
-A negative year always means a year before year 0, but what gets written on the canvas is up to you. The **Negative Era** and **Positive Era** fields in the timeline's general settings add a label after the number:
+A negative year always means a year before year 0, but what gets written on the canvas is up to you. The **Negative Era** and **Positive Era** fields in the timeline's date settings add a label after the number:
 
 - Leave **Negative Era** empty and `-1627` displays as `-1627`
 - Set it to `BCE` and the same year displays as `1627 BCE`
@@ -28,9 +30,15 @@ A negative year always means a year before year 0, but what gets written on the 
 
 **Positive Era** does the same for years after 0, such as `CE` or `AD`. Both are free text up to 10 characters, and both are labels only. When a negative year carries a label, the minus sign is dropped and the number is shown as a positive value. What gets stored in the file is always the plain signed number, so filters and sorting are unaffected by whatever the labels say.
 
+## No year zero
+
+By default, years are counted like a number line, so year 0 sits between -1 and 1. Historians count differently: 1 BCE is followed directly by 1 CE, with no year 0 in between. Turn on **No Year Zero** in the date settings to count years that way, so durations across the boundary come out right. For example, a span from 1 BCE to 1 CE lasts one year instead of two.
+
+Existing dates keep their labels when you turn it on, and anything at year 0 moves to 1 BCE.
+
 ## Approximate dates
 
-Use an approximate date when a date is an estimate rather than a record. **Approximate Date** in the timeline's general settings controls the marker, such as `c.`, `ca.`, or `circa`; leaving it empty uses `c.`.
+Use an approximate date when a date is an estimate rather than a record. **Approximate Date** in the timeline's date settings controls the marker, such as `c.`, `ca.`, or `circa`; leaving it empty uses `c.`.
 
 In the right panel's edit mode, hover a date field and click the **≈** button beside it to mark that date approximate. Spans and eras have one on both the start and end dates, so a range can display as `c. 1451 - 1506` or `c. 625 - c. 545 BC`. These markers affect only how dates are displayed, not their position, sorting, or filtering.
 
@@ -38,7 +46,7 @@ Era bands do not show dates on the canvas. Add **Fuzzy Start** or **Fuzzy End** 
 
 ## Date formats
 
-The **Date Format** setting, in a timeline's advanced settings, controls how month and day dates are shown and typed:
+The **Date Format** setting, in a timeline's date settings, controls how month and day dates are shown and typed:
 
 - `MM/DD/YYYY` (default)
 - `DD/MM/YYYY`
@@ -52,7 +60,7 @@ Dash-style ISO input is recognized whichever format is active, so `2026-07-04` a
 
 **Show Durations** in the timeline's appearance settings displays the length of every span and era. Calendar timelines use years, months, and days, such as `3 yrs, 8 mos, 5 days`; year-only timelines show years, such as `1,450 yrs`. Durations update automatically when an element's dates change.
 
-For timelines whose units are not years, set **Duration Unit** in the general settings. A geological timeline can use `Ma`, for example, so a range from `-3.5` to `-1.2` displays as `2.3 Ma`. Leaving it empty uses `yr` or `yrs`.
+For timelines whose units are not years, set **Duration Unit** in the date settings. A geological timeline can use `Ma`, for example, so a range from `-3.5` to `-1.2` displays as `2.3 Ma`. Leaving it empty uses `yr` or `yrs`.
 
 On the canvas, a span's duration follows its date range and an era's follows its name. Spans and eras also gain a **Duration** row in the right panel. Hiding a span's date with **Hide Date** or **Hide Details** hides its duration too.
 

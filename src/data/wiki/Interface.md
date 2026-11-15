@@ -20,9 +20,13 @@ The main canvas is where you view and edit your timeline. Right-click an empty a
 
 Right-click an event or span to convert it into the other type.
 
-The button bar in the top-right corner contains zoom in/out buttons, a filter menu, and a settings shortcut. If [[Map-View|map view]] is enabled, a toggle to switch between timeline and map view appears here too.
+The button bar in the top-right corner contains zoom in/out buttons, a filter menu, and a settings shortcut.
 
-At the bottom of the canvas is a scrubber that lets you jump to any point in the timeline. It also has a play button that animates through the timeline from start to end.
+When a timeline has more than one view turned on, the view switcher in the top bar moves between the Timeline, [[Map-View|Map]], Spreadsheet, and Calendar views. Alt+1 to Alt+4 switch views from the keyboard. See [[Views]].
+
+At the bottom of the canvas is a scrollbar that lets you jump to any point in the timeline. It also has a play button that animates through the timeline from start to end.
+
+The playback options menu next to the play button sets the **Speed** (from 0.25× to 8×), the **Direction** (forward or reverse), and **Loop**. These also have shortcuts: `,` and `.` for slower and faster, `R` to reverse, and `L` to loop.
 
 ## Right Panel
 
@@ -30,9 +34,11 @@ The right panel shows the properties of the selected element. It has two modes t
 
 **Overview mode** - Displays the element's name, date or date range, tags, group, parent spans, and note content. If a MediaWiki article is linked, it renders inline. Clicking a tag spotlights it; clicking a linked span navigates to it.
 
-**Edit mode** - Edit the element's name, date, parent, tags, group, and color. Optional properties such as coordinates, thumbnail, icon, line and border style, and hide date stay out of the way until they have a value. Add one with **+ Add property**, and remove it again with the × that appears when you hover it. Press Enter in a text field to move to the next one.
+**Edit mode** - Edit the element's name, date, parent, tags, group, and color. Optional properties such as coordinates, thumbnail, icon, font size, connections, line and border style, and hide date stay out of the way until they have a value. Add one with **+ Add property**, and remove it again with the × that appears when you hover it. Press Enter in a text field to move to the next one.
 
 Below the properties, the **Note**, **Wiki**, and **Sources** buttons attach a note, a wiki article, or sources to the element. See [[Notes]].
+
+If the element has [connections](/wiki/Elements#connections), they appear in overview mode. Clicking one opens the linked timeline or element, and a **Back** button returns you to where you were.
 
 While editing an event, drop an image anywhere on the panel to set it as the thumbnail.
 
@@ -40,4 +46,4 @@ The bottom bar has Previous / Next buttons to step through elements, and a Delet
 
 ## Language
 
-The interface language can be changed in app settings under **General**, once translations are available. Date and time formats are set per timeline and aren't affected by the language. To help translate Timelines, see the [translation guide](https://github.com/sreegjl/timelines/blob/main/CONTRIBUTING-i18n.md).
+The interface language can be changed in app settings under **General**. Timelines is available in English and Brazilian Portuguese. Date and time formats are set per timeline and aren't affected by the language. To help translate Timelines, see the [translation guide](https://github.com/sreegjl/timelines/blob/main/CONTRIBUTING-i18n.md).

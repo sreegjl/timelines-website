@@ -7,6 +7,19 @@ function Changelog() {
   })
   const releases = [
     {
+      version: '0.9.0-alpha.1',
+      date: 'November 15, 2026',
+      changes: [
+        'Calendar view with month and year layouts, and a view switcher for timeline, map, spreadsheet, and calendar',
+        '3D globe map with auto-rotate, plus map routes connecting located elements in date order',
+        'Connections that link elements to other timelines, with a back button to return',
+        'Search inside notes, playback speed, reverse and loop, and custom font sizes per event and span',
+        'No Year Zero setting, reorganized project settings, and a choice of where timelines are saved',
+        'Brazilian Portuguese translation, and fixes for PNG export clipping and Git Sync folder changes',
+      ],
+      solid: false,
+    },
+    {
       version: '0.8.0-alpha.1',
       date: 'October 12, 2026',
       changes: [

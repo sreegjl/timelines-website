@@ -120,6 +120,8 @@ Open both, merge whatever you want by hand, then delete the copy you no longer n
 
 **A timeline is too large.** GitHub rejects any single file over 100MB, and a package bundles all of a timeline's images. If one timeline exceeds the limit, the app syncs everything else and shows an error naming it. Shrinking or unlinking its largest images is the fix.
 
+**Changing the timelines folder.** Timelines left behind in the old folder stop syncing from this computer, but they are not deleted from the repository or your other devices. Move them to the new folder when prompted to keep syncing them. See [[Files]].
+
 **Connect fails right away.** Confirm you pasted the HTTPS URL rather than an SSH one, that the branch name matches the repo, and that the token has **Contents: Read and write** on that repository.
 
 ---
